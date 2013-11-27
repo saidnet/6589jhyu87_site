@@ -1,6 +1,3 @@
 <?php
-	include('config/_config.inc.php');
-
-	require('controleurs/login.php');
-
+	$tpl->display('liste-alert.html');
 ?>

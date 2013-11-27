@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.1.14, created on 2013-11-27 16:11:07
+=======
+<?php /* Smarty version Smarty-3.1.14, created on 2013-11-27 15:13:24
+>>>>>>> version 1.0.0.5
          compiled from "vues\templates\accueil.htm" */ ?>
 <?php /*%%SmartyHeaderCode:72485296199b8691a5-99932606%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,6 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '85bc714e9a8b03c0c49b1721bbeafed21626507d' => 
     array (
       0 => 'vues\\templates\\accueil.htm',
+<<<<<<< HEAD
       1 => 1385568653,
       2 => 'file',
     ),
@@ -14,6 +19,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     array (
       0 => 'vues\\templates\\skeleton.htm',
       1 => 1385568660,
+=======
+      1 => 1385565185,
+>>>>>>> version 1.0.0.5
       2 => 'file',
     ),
   ),
@@ -21,11 +29,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
+<<<<<<< HEAD
   'unifunc' => 'content_5296199ba9fd73_14349751',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5296199ba9fd73_14349751')) {function content_5296199ba9fd73_14349751($_smarty_tpl) {?><!DOCTYPE html>
+=======
+  'unifunc' => 'content_5295db79a40873_12306260',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5295db79a40873_12306260')) {function content_5295db79a40873_12306260($_smarty_tpl) {?><!DOCTYPE html>
+>>>>>>> version 1.0.0.5
 <html lang="fr">
 <head>
 	
@@ -57,6 +71,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	
 	<!-- Fin: CSS -->
 	
+<<<<<<< HEAD
+=======
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![Finif]-->
+
+	<!-- Debut: Favicon -->
+	<link rel="shortcut icon" href="web/img/favicon.ico">
+	<!-- Fin: Favicon -->
+	
+			<style type="text/css">
+			body { background: url(web/img/bg-login.jpg) !important; }
+		</style>
+		
+		
+		
+</head>
+>>>>>>> version 1.0.0.5
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -193,14 +227,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 			<div>
 				<a class="btn btn-success" href="#">
-                                <i class="icon-plus-sign icon-white"></i> Ajouter Un utilisateur
-                            </a>
-                            <a class="btn" href="#">
-                                <i class=" icon-zoom-in"></i> Afficher les utilisaturs
-                            </a>
-                            <a class="btn btn-info" href="#">
-                                <i class="icon-zoom-in icon-white"></i> Aficher les alerte
-                            </a>
+                    <i class="icon-plus-sign icon-white"></i> Ajouter Un utilisateur
+                 </a>
+                 <a class="btn" href="index.php?page=liste-utilisateur">
+                 	<i class=" icon-zoom-in"></i> Afficher les utilisaturs
+                 </a>
+                 <a class="btn btn-info" href="#">
+                 	<i class="icon-zoom-in icon-white"></i> Aficher les alerte
+                 </a>
 			</div>
 			
 			<div class="row-fluid sortable">		
@@ -442,13 +476,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div><!--/span-->
 			
 			</div><!--/row-->
-
-	<hr>
+			<hr>
 			<!-- Fin: Content -->
 			</div><!--/#content.span10-->
+<<<<<<< HEAD
 				</div><!--/fluid-row-->
 
 
+=======
+			</div><!--/fluid-row-->
+>>>>>>> version 1.0.0.5
 			
 				
 		<div class="modal hide fade" id="myModal">
