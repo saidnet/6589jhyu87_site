@@ -1,5 +1,5 @@
 <?php
-	$var='Said&RR';
+	$var='Said&';
 
 	$tpl->assign('nm',$var);
 

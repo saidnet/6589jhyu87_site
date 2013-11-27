@@ -1,7 +1,10 @@
 <?php
 	require('config/init.php');
-//*
-if (isset($_SESSION['login']))
+
+if(isset($_GET['page']) and $_GET['page']=='connexion'){
+	require 'controleurs/connexion.php';
+}
+else if (isset($_SESSION['login']))
 {
 	if (isset($_GET['page']))
     {
@@ -14,9 +17,8 @@ if (isset($_SESSION['login']))
 }
 else
 {
-	//require 'controleurs/connexion.php';
-	require('controleurs/exemple.php');
+	require 'controleurs/connexion.php';
+	//require('controleurs/exemple.php');
 }
-//*/
 
 ?>

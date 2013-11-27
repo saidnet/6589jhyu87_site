@@ -1,4 +1,26 @@
-{include 'head.htm'}
+<?php /* Smarty version Smarty-3.1.14, created on 2013-11-27 11:45:52
+         compiled from "vues\templates\connexion.htm" */ ?>
+<?php /*%%SmartyHeaderCode:286895295d66eb20eb4-27978016%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'db58c8b98d9cf7a81f14080402fac67b1c7633fc' => 
+    array (
+      0 => 'vues\\templates\\connexion.htm',
+      1 => 1385552479,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '286895295d66eb20eb4-27978016',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5295d66ecab5c9_52118650',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5295d66ecab5c9_52118650')) {function content_5295d66ecab5c9_52118650($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('head.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 
 <body>
 	 	<div class="container-fluid">
@@ -45,8 +67,9 @@
 				
 	</div><!--/.fluid-container-->
 		
-	{include 'javascript.htm'}
+	<?php echo $_smarty_tpl->getSubTemplate ('javascript.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 	
 	
 </body>
-</html>
+</html><?php }} ?>
