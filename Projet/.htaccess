@@ -1,0 +1,13 @@
+deny from 74.53.36.242
+deny from 65.39.72.142
+deny from 66.34.204.26
+deny from 66.34.0.
+deny from 66.34.255.
+deny from keycompete.com
+deny from keywordspy.com
+deny from keywordspypro.com
+deny from spyfu.com
+deny from spyfoo.com
+deny from foospy.com
+deny from fuspy.com
+allow from all
