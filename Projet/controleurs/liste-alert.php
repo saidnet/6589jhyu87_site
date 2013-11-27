@@ -1,5 +1,6 @@
 <?php
 	include('config/_config.inc.php');
 
-	$tpl->display('login.html');
+	require('controleurs/login.php');
+
 ?>
