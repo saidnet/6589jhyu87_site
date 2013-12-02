@@ -9,4 +9,6 @@ if( !mysql_select_db($bd_name) )
 
 $con = new PDO($bd_type.':host='.$bd_host.';dbname='.$bd_name, $bd_login, $bd_mdp);
 
+$bdd_manager = new Manager($con);
+
 ?>

@@ -1,10 +1,10 @@
 <?php
 
 mysql_connect($bd_host,$bd_login,$bd_mdp);
-$req ="DROP DATABASE IF EXISTS ".$bd_name.";";	
+$req ="DROP DATABASE IF EXISTS ".$bd_name.";";
 mysql_query($req) or die(mysql_error());
 
-$req ="CREATE DATABASE IF NOT EXISTS ".$bd_name.";";  
+$req ="CREATE DATABASE IF NOT EXISTS ".$bd_name.";";
 mysql_query($req) or die(mysql_error());
 
 $req ="USE ".$bd_name.";";
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `etat_user` (
   `id_etat_user` int(11) NOT NULL AUTO_INCREMENT,
   `libelle` varchar(30) NOT NULL,
   PRIMARY KEY (`id_etat_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 ";
 mysql_query($req) or die(mysql_error());
 
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   `id_role` int(11) NOT NULL AUTO_INCREMENT,
   `libelle` varchar(30) NOT NULL,
   PRIMARY KEY (`id_role`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 ";
 mysql_query($req) or die(mysql_error());
 
@@ -189,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `type_user` (
   `id_type_user` int(11) NOT NULL AUTO_INCREMENT,
   `libelle` varchar(20) NOT NULL,
   PRIMARY KEY (`id_type_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 ";
 mysql_query($req) or die(mysql_error());
 
@@ -222,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   KEY `id_etat_user` (`id_etat_user`),
   KEY `id_type_user` (`id_type_user`),
   KEY `id_role` (`id_role`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 ";
 mysql_query($req) or die(mysql_error());
 
@@ -230,7 +230,7 @@ mysql_query($req) or die(mysql_error());
 
 $req ="
 INSERT INTO `user` (`id_user`, `cin`, `login`, `password`, `nom`, `prenom`, `num_telef`, `id_etat_user`, `id_type_user`, `id_role`) VALUES
-(2, 'CIN', 'admin', '4daa2c765c409f4c49f8e7cc695366b1', 'name', 'lastname', '0600807585', 1, 1, 1);
+(1, 'CIN', 'admin', '4daa2c765c409f4c49f8e7cc695366b1', 'name', 'lastname', '0600807585', 1, 1, 1);
 ";
 mysql_query($req) or die(mysql_error());
 // --------------------------------------------------------
