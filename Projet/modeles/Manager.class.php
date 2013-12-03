@@ -14,10 +14,6 @@
         	$tab_type = array();
         }
 
-        public function test(){
-        	$this->_db->query('SELECT * FROM Role;');
-     	}
-
         public function init($obj)
         {
         	$this->nom_table=$obj->getNomTable();
@@ -62,7 +58,7 @@
             $this->_db->exec($requete);
         }
         
-        public function get($nm_obj,$id)
+        public function getByID($nm_obj,$id)
         {
         	$requete="SELECT * FROM ".$nm_obj." WHERE id = ".$id;
             $resultat=$this->_db->query($requete);
@@ -74,6 +70,23 @@
             return($new_elem);
         }
         
+        public function getWhere($nm_obj,$condition)
+        {
+            $list_elem = array();
+            
+            $requete='SELECT * FROM '.$nm_obj." ".$condition;
+            $resultat = $this->_db->query();
+            
+            while ($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
+            {
+                 $elem= new $nm_obj();
+                 $elem = $this->hydrate($nm_obj,$ligne);
+                $list_elem[] = $elem;
+            }
+            
+            return $list_elem;
+        }
+
         public function getList($nm_obj)
         {
             $list_elem = array();
