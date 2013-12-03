@@ -1,5 +1,5 @@
 <?php
-define('SMARTY_DIR', 'outils/Smarty/libs/');
+define('SMARTY_DIR', '../outils/Smarty/libs/');
 require_once(SMARTY_DIR . 'Smarty.class.php');
 $tpl = new Smarty();
 $tpl->debugging = 0;

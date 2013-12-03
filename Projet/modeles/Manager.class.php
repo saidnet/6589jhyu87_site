@@ -73,23 +73,23 @@
 			
             return($new_elem);
         }
-        /*
-        public function getList()
+        
+        public function getList($nm_obj)
         {
-            $utilisateurS = array();
+            $list_elem = array();
             
-            $q = $this->_db->query('SELECT * FROM utilisateur');
+            $resultat = $this->_db->query('SELECT * FROM '.$nm_obj);
             
-            while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+            while ($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
             {
-			     $F= new utilisateur();
-				 $F->hydrate($donnees);
-                $utilisateurS[] = $F;
+			     $elem= new $nm_obj();
+				 $elem = $this->hydrate($nm_obj,$ligne);
+                $list_elem[] = $elem;
             }
             
-            return $utilisateurS;
+            return $list_elem;
         }
-        */
+        
         public function update($obj)
         {   
             $this->init($obj);
