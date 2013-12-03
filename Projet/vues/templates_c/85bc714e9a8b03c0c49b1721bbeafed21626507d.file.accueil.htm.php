@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-11-27 16:11:07
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-03 18:35:44
          compiled from "vues\templates\accueil.htm" */ ?>
 <?php /*%%SmartyHeaderCode:72485296199b8691a5-99932606%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '85bc714e9a8b03c0c49b1721bbeafed21626507d' => 
     array (
       0 => 'vues\\templates\\accueil.htm',
-      1 => 1385568653,
+      1 => 1386090445,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1385568660,
+      1 => 1386095740,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
   'unifunc' => 'content_5296199ba9fd73_14349751',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5296199ba9fd73_14349751')) {function content_5296199ba9fd73_14349751($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="fr">
@@ -158,9 +158,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="index.html"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Tableau de bord</span></a></li>
 						<li><a href="#"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Listes des utilisateurs</span></a></li>
-						<li><a href="#"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>
-						
-						<li><a href="#"><i class="icon-calendar icon-white"></i><span class="hidden-tablet"> Calendar</span></a></li>
+						<li>
+							<a class="dropmenu" href="#"><i class="fa-icon-folder-close-alt"></i><span class="hidden-tablet"> Alerte</span></a>
+							<ul>
+								<li><a class="submenu" href=""><i class="fa-icon-file-alt"></i><span class="hidden-tablet"> Sous alerte 1</span></a></li>
+								<li><a class="submenu" href=""><i class="fa-icon-file-alt"></i><span class="hidden-tablet"> Sous alerte 2</span></a></li>
+							</ul>	
+						</li>
+						<li><a href="#"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>	
+						<li><a href="#"><i class="icon-calendar icon-white"></i><span class="hidden-tablet"> Calendrier</span></a></li>
 						<li><a href="#"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Page de connexion</span></a></li>
 					</ul>
 				</div><!--/.well -->
