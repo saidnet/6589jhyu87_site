@@ -75,7 +75,7 @@
             $list_elem = array();
             
             $requete='SELECT * FROM '.$nm_obj." ".$condition;
-            $resultat = $this->_db->query();
+            $resultat = $this->_db->query($requete);
             
             while ($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
             {
