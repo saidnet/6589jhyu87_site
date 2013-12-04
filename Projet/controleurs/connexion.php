@@ -1,4 +1,5 @@
 <?php
+	$msg=null;
 	if(isset($_POST['connecter'])){
 		$r=$bdd_manager->getWhere('User',"WHERE login = '".$_POST['username']."'" );
 		if(count($r)==1){	
@@ -7,14 +8,14 @@
 				header("Location: index.php");
 			}
 			else{
-				$msg="Mot de pass erronée !!";
+				$msg="le mot de passe est incorecte";
 				$tpl->assign('msg',$msg);
 				$tpl->display('connexion.htm');
 
 			}
 		}
 		else{
-			$msg="Utilisateur non trouvé !!";
+			$msg="le nom de l'utilisateur est incorecte";
 			$tpl->assign('msg',$msg);
 			$tpl->display('connexion.htm');
 		}

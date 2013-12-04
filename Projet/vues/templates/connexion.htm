@@ -1,4 +1,4 @@
-{include 'head.htm'}
+﻿{include 'head.htm'}
 
 <body>
 	 	<div class="container-fluid">
@@ -11,6 +11,9 @@
 						<a href="#"><i class="icon-cog"></i></a>
 					</div>
 					<h2>Connectez-vous à votre compte</h2>
+
+					<h2><span class="label-important">{$msg}</span></h2>
+					
 					<form class="form-horizontal" action="index.php?page=connexion" method="post">
 						<fieldset>
 							
@@ -36,7 +39,7 @@
 					<hr>
 					<h3>Mot de passe oublié ?</h3>
 					<p>
-						Pas de problème, <a href="#">cliquer ici </a> pour obtenir un nouveau mot de passe.
+						Pas de problème, <span class="label label-warning"><a href="index.php?page=reinitiation">cliquer ici </a></span> pour obtenir un nouveau mot de passe.
 					</p>	
 				</div><!--/span-->
 			</div><!--/row-->

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-03 19:08:41
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 11:31:23
          compiled from "vues\templates\accueil.htm" */ ?>
 <?php /*%%SmartyHeaderCode:72485296199b8691a5-99932606%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '85bc714e9a8b03c0c49b1721bbeafed21626507d' => 
     array (
       0 => 'vues\\templates\\accueil.htm',
-      1 => 1385568653,
+      1 => 1386141746,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386096761,
+      1 => 1386156670,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5296199ba9fd73_14349751',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5296199ba9fd73_14349751')) {function content_5296199ba9fd73_14349751($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5296199ba9fd73_14349751')) {function content_5296199ba9fd73_14349751($_smarty_tpl) {?>﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -41,8 +41,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- Fin: Mobile Specific -->
 	
 	<!-- Debut: CSS -->
-	<link id="bootstrap-style" href="web/css/bootstrap.min.css" rel="stylesheet">
-	<link href="web/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link id="bootstrap-style" href="web/css/bootstrap.css" rel="stylesheet">
+	<link href="web/css/bootstrap-responsive.css" rel="stylesheet">
 	<link id="base-style" href="web/css/style.css" rel="stylesheet">
 	<link id="base-style-responsive" href="web/css/style-responsive.css" rel="stylesheet">
 	
@@ -95,7 +95,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img alt="Tableau de bord Wide Team" src="web/img/logo20.png" /> <span class="hidden-phone">Tableau de bord Wide Team</span></a>
+				<a class="brand" href="index.html"> <img alt="Tableau de bord Wide Team" src="web/img/logo20.png" /> <span class="hidden-phone">Paneau de configuration - E-SOS</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -108,10 +108,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 								<li>
 									<span class="dropdown-menu-title">Vous avez 3 notifications</span>
 								</li>	
-                            	<li><a href="#">+ <i class="icon-user"></i> <span class="message">Nouvel utilisateur</span><span class="time">1 min</span> 
+                            	<li><a href="#">+ <i class="icon-user"></i> <span class="message">Nouvelle alerte</span><span class="time">1 min</span> 
                                     </a>
                                 </li>
-                                <li><a href="#">+ <i class="icon-user"></i> <span class="message">Nouvel utilisateur</span><span class="time">5 min</span> 
+                                <li><a href="#">+ <i class="icon-user"></i> <span class="message">Nouvellle alerte</span><span class="time">5 min</span> 
                                     </a>
                                 </li>
                                 <li>
@@ -119,7 +119,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 	</a>
                                 </li>						
 								
-                                <li><a class="dropdown-menu-sub-footer">Voir tous les avis</a></li>	
+                                <li><a href="#" class="dropdown-menu-sub-footer">Voir tous les alerte</a></li>	
 							</ul>
 						</li>
 						
@@ -135,8 +135,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="icon-user"></i> Profile</a></li>
-								<li><a href="login.html"><i class="icon-off"></i> Déconnexion</a></li>
+								<li><a href="index.php?page=profile"><i class="icon-user"></i> Profile</a></li>
+								<li><a href="index.php?page=connexion"><i class="icon-off"></i> Déconnexion</a></li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->
@@ -158,11 +158,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="index.html"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Tableau de bord</span></a></li>
 						<li><a href="#"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Listes des utilisateurs</span></a></li>
+						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les commissariats</span></a></li>
+						<li><a href="index.php?page=hopital"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Les hopitaux</span></a></li>
 						<li>
-							<a class="dropmenu" href="#"><i class="fa-icon-folder-close-alt"></i><span class="hidden-tablet"> Alerte</span></a>
+							<a class="dropmenu" href="#"><i class="icon-exclamation-sign icon-white"></i><span class="hidden-tablet"> Les alertes</span></a>
 							<ul>
-								<li><a class="submenu" href=""><i class="fa-icon-file-alt"></i><span class="hidden-tablet"> Sous alerte 1</span></a></li>
-								<li><a class="submenu" href=""><i class="fa-icon-file-alt"></i><span class="hidden-tablet"> Sous alerte 2</span></a></li>
+								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Etats alerte</span></a></li>
+								<li><a class="submenu" href="index.php?page=type-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Types d'alrte</span></a></li>
 							</ul>	
 						</li>
 						<li><a href="#"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>	
@@ -189,22 +191,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<hr>
 				<ul class="breadcrumb">
 					<li>
-						<a href="#">Accuiel</a> <span class="divider">/</span>
+						<a href="index.php?page=accueil">Accuiel</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#">Listes des utilisateurs</a>
+						<a href="index.php?page=liste-utilisateur">Listes des utilisateurs</a>
 					</li>
 				</ul>
 				<hr>				
 			</div>
 			<div>
-				<a class="btn btn-success" href="#">
+				<a class="btn btn-success" href="index.php?page=add-utilisateur">
                                 <i class="icon-plus-sign icon-white"></i> Ajouter Un utilisateur
                             </a>
-                            <a class="btn" href="#">
+                            <a class="btn" href="index.php?page=liste-utilisateur">
                                 <i class=" icon-zoom-in"></i> Afficher les utilisaturs
                             </a>
-                            <a class="btn btn-info" href="#">
+                            <a class="btn btn-info" href="index.php?page=liste-alerte">
                                 <i class="icon-zoom-in icon-white"></i> Aficher les alerte
                             </a>
 			</div>
@@ -453,8 +455,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<!-- Fin: Content -->
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
-
-
 			
 				
 		<div class="modal hide fade" id="myModal">

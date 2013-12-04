@@ -1,4 +1,31 @@
-﻿<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 14:12:07
+         compiled from "vues\templates\etat-alerte.htm" */ ?>
+<?php /*%%SmartyHeaderCode:23174529ee296304584-53273437%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '480e9141e77cc55a3a9c53058e922aa3a277f955' => 
+    array (
+      0 => 'vues\\templates\\etat-alerte.htm',
+      1 => 1386144635,
+      2 => 'file',
+    ),
+    'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
+    array (
+      0 => 'vues\\templates\\skeleton.htm',
+      1 => 1386156670,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '23174529ee296304584-53273437',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_529ee296355ab0_10705185',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_529ee296355ab0_10705185')) {function content_529ee296355ab0_10705185($_smarty_tpl) {?>﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -155,7 +182,65 @@
 				</div>
 			</noscript>
 			
-			{block name="contenu"}{/block}			
+			
+<div id="content" class="span10"> <!-- start: Content -->
+	<div>
+		<hr>
+		<ul class="breadcrumb">
+			<li>
+				<a href="#">Accuiel</a> <span class="divider">/</span>
+			</li>
+			<li>
+				<a href="#">Les états d'alerte</a>
+			</li>
+		</ul>
+		<hr>				
+	</div>
+	<div>
+		<a class="btn btn-success" href="#"><i class="icon-plus-sign icon-white"></i> Ajouter une état</a>
+	</div>
+	<div class="row-fluid sortable">		
+		<div class="box span12">
+			<div class="box-header" data-original-title>
+				<h2><i class="icon-user"></i><span class="break"></span>Etat d'alerte</h2>
+				<div class="box-icon">
+					<a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+					<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+					<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+				</div>
+			</div>
+			<div class="box-content">
+				<table class="table table-striped table-bordered bootstrap-datatable datatable table-hover">
+					<thead>
+						<tr>
+							<th>Libellé</th>
+							<th>Actions</th>
+						</tr>
+					</thead>   
+					<tbody>
+							<tr>
+								<td>En attente</td>
+								<td class="center">
+									<a class="btn btn-success" href="#">
+										<i class="icon-zoom-in icon-white"></i>  
+									</a>
+									<a class="btn btn-info" href="#">
+										<i class="icon-edit icon-white"></i>  
+									</a>
+									<a class="btn btn-danger" href="#">
+										<i class="icon-trash icon-white"></i> 
+									</a>
+								</td>
+							</tr>
+					</tbody>
+				</table>            
+			</div>
+		</div><!--/span-->
+	</div><!--/row-->
+	<hr> <!-- Fin: Content -->
+</div><!--/#content.span10-->
+</div><!--/fluid-row-->
+			
 				
 		<div class="modal hide fade" id="myModal">
 			<div class="modal-header">
@@ -217,3 +302,4 @@
 	
 </body>
 </html>
+<?php }} ?>

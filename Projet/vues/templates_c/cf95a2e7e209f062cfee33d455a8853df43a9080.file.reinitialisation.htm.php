@@ -1,7 +1,29 @@
-﻿
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 11:26:07
+         compiled from "vues\templates\reinitialisation.htm" */ ?>
+<?php /*%%SmartyHeaderCode:6921529f101ca31892-83070156%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'cf95a2e7e209f062cfee33d455a8853df43a9080' => 
+    array (
+      0 => 'vues\\templates\\reinitialisation.htm',
+      1 => 1386156363,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '6921529f101ca31892-83070156',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_529f101cab04e5_78077507',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_529f101cab04e5_78077507')) {function content_529f101cab04e5_78077507($_smarty_tpl) {?>﻿
 
 
-{include 'head.htm'}
+<?php echo $_smarty_tpl->getSubTemplate ('head.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 
 <body>
 	<div class="container-fluid">
@@ -56,6 +78,7 @@
 			</div><!--fin: Content-->				
 		</div><!--/.fluid-container-->
 	</div>
-	{include 'javascript.htm'}
+	<?php echo $_smarty_tpl->getSubTemplate ('javascript.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 </body>
-</html>
+</html><?php }} ?>

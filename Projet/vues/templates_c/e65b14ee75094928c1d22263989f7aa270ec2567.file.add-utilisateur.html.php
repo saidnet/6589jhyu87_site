@@ -1,4 +1,31 @@
-﻿<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 11:31:34
+         compiled from "vues\templates\add-utilisateur.html" */ ?>
+<?php /*%%SmartyHeaderCode:27243529e84b07cc9b3-10302455%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'e65b14ee75094928c1d22263989f7aa270ec2567' => 
+    array (
+      0 => 'vues\\templates\\add-utilisateur.html',
+      1 => 1386141741,
+      2 => 'file',
+    ),
+    'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
+    array (
+      0 => 'vues\\templates\\skeleton.htm',
+      1 => 1386156670,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '27243529e84b07cc9b3-10302455',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_529e84b082c912_94870824',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_529e84b082c912_94870824')) {function content_529e84b082c912_94870824($_smarty_tpl) {?>﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -155,7 +182,114 @@
 				</div>
 			</noscript>
 			
-			{block name="contenu"}{/block}			
+			
+			
+<div id="content" class="span10">
+<!-- start: Content -->
+<div>
+	<hr>
+	<ul class="breadcrumb">
+		<li><a href="#">Accuiel</a> <span class="divider">/</span></li>
+		<li><a href="#">Listes des utilisateurs</a></li>
+	</ul>
+	<hr>				
+</div>
+<div>
+	<a class="btn btn-success" href="add-utilisateur.php"><i class="icon-plus-sign icon-white"></i> Ajouter Un utilisateur</a>
+             <a class="btn" href="liste-utilisateur.php"><i class=" icon-zoom-in"></i> Afficher les utilisaturs</a>
+             <a class="btn btn-info" href="liste-alerte.php"><i class="icon-zoom-in icon-white"></i> Aficher les alerte</a>
+</div>
+<div class="row-fluid sortable">
+	<div class="box span12">
+		<div class="box-header well" data-original-title>
+			<h2><i class="icon-edit"></i> Les éléments de formulaire</h2>
+			<div class="box-icon">
+				<a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+				<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+				<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+			</div>
+		</div>
+		<div class="box-content">
+			<form class="form-horizontal" action="modeles/add-user.php" method="post">
+				<fieldset>
+					<div class="control-group">
+					<label class="control-label" for="focusedInput">CIN :</label>
+					<div class="controls">
+							<input class="input-xlarge focused" id="focusedInput" type="text" name="cin">
+					</div>
+					 </div>
+						<div class="control-group">
+					<label class="control-label" for="focusedInput">Nom de L'utilisateur :</label>
+					<div class="controls">
+							<input class="input-xlarge focused" id="focusedInput" type="text" name="user">
+					</div>
+					 </div>
+						<div class="control-group">
+                                 <label class="control-label" for="date01"> Mot de passe :</label>
+                                 <div class="controls">
+                                     <input type="text" class="input-xlarge"  value="" name="password">
+                                 </div>
+                           </div>
+                           <div class="control-group">
+					<label class="control-label" for="focusedInput">Nom :</label>
+					<div class="controls">
+							<input class="input-xlarge focused" id="focusedInput" type="text" name="nom">
+					</div>
+						</div>
+						<div class="control-group">
+					<label class="control-label" for="focusedInput">Prenom :</label>
+					<div class="controls">
+							<input class="input-xlarge focused" id="focusedInput" type="text" name="prenom">
+					</div>
+					 </div>
+							  
+                           <div class="control-group">
+                                 <label class="control-label" for="date01"> Rôle :</label>
+                                 <div class="controls">
+                                     <input type="text" class="input-xlarge"  value="" name="role">
+                                 </div>
+                           </div>
+                           <div class="control-group">
+					<label class="control-label" for="focusedInput">Mail :</label>
+					<div class="controls">
+							<input type="email" class="input-xlarge"  value="" name="email">
+					</div>
+					 </div>
+                           <div class="control-group">
+                                 <label class="control-label" for="typeahead">Nationalité : </label>
+                                 <div class="controls">
+                                       <input type="text" name="nationalite" class="input-xlarge focused" id="typeahead"  data-provide="typeahead" data-items="4" data-source='["Afghanistan","Afrique du Sud","Albanie","Algérie","Allemagne","Andorre","Angola","Antigua-et-Barbuda","Arabie saoudite","Argentine","Arménie","Australie","Autriche","Azerbaïdjan","Bahamas","Bahreïn","Bangladesh","Barbade","Belau","Belgique","Belize","Bénin","Bhoutan","Biélorussie","Birmanie","Bolivie","Bosnie-Herzégovine","Botswana","Brésil","Brunei","Bulgarie","Burkina","Burundi","Cambodge","Cameroun","Canada","Cap-Vert","Chili","Chine","ChypreColombie","Comores","Congo","CookCorée du Nord","Corée du Sud","Costa Rica","Côte d Ivoire","Croatie","Cuba","Danemark","Djibouti","Dominique","Égypte","Émirats arabes unis","Équateur","Érythrée","Espagne","Estonie","États-Unis","Éthiopie","Fidji","Finlande","France","Gabon","Gambie","Géorgie","Ghana","Grèce","Grenade","Guatemala","Guinée","Guinée-Bissao","Guinée équatoriale","Guyana","Haïti","Honduras","Hongrie","Inde","Indonésie","Iran","Iraq","Irlande","Islande","Italie","Jamaïque","Japon","Jordanie","Kazakhstan","Kenya","Kirghizistan","Kiribati","Koweït","Laos","Lesotho","Lettonie","Liban","Liberia","Libye","Liechtenstein","Lituanie","Luxembourg","Macédoine","Madagascar","Malaisie","Malawi","Maldives","Mali","Malte","Maroc","Marshall","Maurice","Mauritanie","Mexique","Micronésie","Moldavie","Monaco","Mongolie","Mozambique","Namibie","Nauru","Népal","Nicaragua","Niger","Nigeria","Niue","Norvège","Nouvelle-Zélande","Oman","Ouganda","Ouzbékistan","Pakistan","Panama","Nouvelle Guinée","Paraguay","Pays-Bas","Pérou","Philippines","Pologne","Portugal","Qatar","République centrafricaine","République dominicaine","République tchèque","Roumanie","Royaume-Uni","Russie","Rwanda","Saint-Christophe-et-Niévès","Sainte-Lucie","Saint-Marin","Saint-Siège","Salomon","Salvador","Samoa occidentales","Sénégal","Seychelles","Sierra Leone","Singapour","Slovaquie","Slovénie","Somalie","Soudan","Sri Lanka","Suède","Suisse","Suriname","Swaziland","Syrie","Tadjikistan","Tanzanie","Tchad","Thaïlande","Togo","Tonga","Trinité-et-Tobago","Tunisie","Turkménistan","Turquie","Tuvalu","Ukraine","Uruguay","Vanuatu","Venezuela","Viêt Nam","Yémen","Yougoslavie","Zambie","Zimbabwe"]'>
+                                     <p class="help-block">Commencez à taper pour activer l'auto complète!</p>
+                                 </div>
+							 </div>
+							 <div class="control-group">
+							   <label class="control-label" for="date01">Date de naissance :</label>
+							   <div class="controls">
+							    <input type="date" class="input-xlarge"  value="17/08/1970" name="naissance">
+							   </div>
+							 </div>
+							 <div class="form-actions">
+						<button type="submit" name="bouton" value="Enregistrer" class="btn btn-primary" >Enregistrer les modifications</button>
+						<button type="submit" name="bouton" value="Fermer" class="btn" >Fermer</button>
+							 </div>
+				</fieldset>
+					</form>					
+		</div>
+	</div><!--/span-->
+</div><!--/row-->
+			
+					<!-- content Fins -->
+</div><!--/#content.span10-->
+				</div><!--/fluid-row-->
+			
+			</div><!--/row-->
+
+			<hr>
+			<!-- Fin: Content -->
+			</div><!--/#content.span10-->
+				</div><!--/fluid-row-->
+
+			
 				
 		<div class="modal hide fade" id="myModal">
 			<div class="modal-header">
@@ -217,3 +351,4 @@
 	
 </body>
 </html>
+<?php }} ?>

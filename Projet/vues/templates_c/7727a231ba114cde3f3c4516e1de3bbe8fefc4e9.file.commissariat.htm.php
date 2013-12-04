@@ -1,4 +1,31 @@
-﻿<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 11:55:23
+         compiled from "vues\templates\commissariat.htm" */ ?>
+<?php /*%%SmartyHeaderCode:11450529eda3ce878b1-10350564%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
+    array (
+      0 => 'vues\\templates\\commissariat.htm',
+      1 => 1386144665,
+      2 => 'file',
+    ),
+    'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
+    array (
+      0 => 'vues\\templates\\skeleton.htm',
+      1 => 1386156670,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '11450529eda3ce878b1-10350564',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_529eda3d014f42_63810883',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_529eda3d014f42_63810883')) {function content_529eda3d014f42_63810883($_smarty_tpl) {?>﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -155,7 +182,69 @@
 				</div>
 			</noscript>
 			
-			{block name="contenu"}{/block}			
+			
+<div id="content" class="span10"> <!-- start: Content -->
+	<div>
+		<hr>
+		<ul class="breadcrumb">
+			<li>
+				<a href="#">Accuiel</a> <span class="divider">/</span>
+			</li>
+			<li>
+				<a href="#">Les commissariat</a>
+			</li>
+		</ul>
+		<hr>				
+	</div>
+	<div>
+		<a class="btn btn-success" href="#"><i class="icon-plus-sign icon-white"></i> Ajouter une nouvelle commissariat</a>
+	</div>
+	<div class="row-fluid sortable">		
+		<div class="box span12">
+			<div class="box-header" data-original-title>
+				<h2><i class="icon-user"></i><span class="break"></span>Commissariat</h2>
+				<div class="box-icon">
+					<a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+					<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+					<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+				</div>
+			</div>
+			<div class="box-content">
+				<table class="table table-striped table-bordered bootstrap-datatable datatable table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Nom</th>
+							<th>Position</th>
+							<th>Actions</th>
+						</tr>
+					</thead>   
+					<tbody>
+						<tr>
+							<td>2548596</td>
+							<td>Guéliz 1</td>
+							<td>25 rue </td>
+							<td class="center">
+								<a class="btn btn-success" href="#">
+									<i class="icon-zoom-in icon-white"></i>  
+								</a>
+								<a class="btn btn-info" href="#">
+									<i class="icon-edit icon-white"></i>  
+								</a>
+								<a class="btn btn-danger" href="#">
+									<i class="icon-trash icon-white"></i> 
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>            
+			</div>
+		</div><!--/span-->
+	</div><!--/row-->
+	<hr> <!-- Fin: Content -->
+</div><!--/#content.span10-->
+</div><!--/fluid-row-->
+			
 				
 		<div class="modal hide fade" id="myModal">
 			<div class="modal-header">
@@ -217,3 +306,4 @@
 	
 </body>
 </html>
+<?php }} ?>
