@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 11:55:23
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 14:28:20
          compiled from "vues\templates\commissariat.htm" */ ?>
 <?php /*%%SmartyHeaderCode:11450529eda3ce878b1-10350564%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
     array (
       0 => 'vues\\templates\\commissariat.htm',
-      1 => 1386144665,
+      1 => 1386167297,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
@@ -212,8 +212,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="box-content">
 				<table class="table table-striped table-bordered bootstrap-datatable datatable table-hover">
 					<thead>
-						<tr>
-							<th>ID</th>
 							<th>Nom</th>
 							<th>Position</th>
 							<th>Actions</th>
@@ -221,9 +219,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</thead>   
 					<tbody>
 						<tr>
-							<td>2548596</td>
-							<td>Guéliz 1</td>
-							<td>25 rue </td>
+							<td>Guéliz central</td>
+							<td>25 abdelkrim elkhatabi </td>
 							<td class="center">
 								<a class="btn btn-success" href="#">
 									<i class="icon-zoom-in icon-white"></i>  
