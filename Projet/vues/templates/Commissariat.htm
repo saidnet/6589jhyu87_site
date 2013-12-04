@@ -35,9 +35,11 @@
 						</tr>
 					</thead>   
 					<tbody>
+					{foreach ($list as $commissariat)}
+											
 						<tr>
-							<td>Guéliz central</td>
-							<td>25 abdelkrim elkhatabi </td>
+							<td>{commisariat->nom}</td>
+							<td> {commissariat->position} </td>
 							<td class="center">
 								<a class="btn btn-success" href="#">
 									<i class="icon-zoom-in icon-white"></i>  
@@ -50,6 +52,7 @@
 								</a>
 							</td>
 						</tr>
+						{/foreach}
 					</tbody>
 				</table>            
 			</div>
