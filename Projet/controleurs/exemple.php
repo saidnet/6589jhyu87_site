@@ -3,7 +3,7 @@
 	$r=new Role();
 	//$r->setID(3);
 	//$r->setLibelle('test by Said');
-	$r=$bdd_manager->get('Role',3);
+	$r=$bdd_manager->getByID('Role',3);
 	//$bdd_manager->ajouter($r);
 	//$bdd_manager->delete($r);
 	//$bdd_manager->update($r);

@@ -93,10 +93,10 @@
             
             $resultat = $this->_db->query('SELECT * FROM '.$nm_obj);
             
-            while ($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
+            while($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
             {
 			     $elem= new $nm_obj();
-				 $elem = $this->hydrate($nm_obj,$ligne);
+				$elem = $this->hydrate($nm_obj,$ligne);
                 $list_elem[] = $elem;
             }
             

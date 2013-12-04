@@ -35,11 +35,11 @@
 						</tr>
 					</thead>   
 					<tbody>
-					{foreach ($list as $commissariat)}
+					{foreach $list as $commissariat}
 											
 						<tr>
-							<td>{commisariat->nom}</td>
-							<td> {commissariat->position} </td>
+							<td>{$commissariat->getNom()}</td>
+							<td> {$commissariat->getPosition()} </td>
 							<td class="center">
 								<a class="btn btn-success" href="#">
 									<i class="icon-zoom-in icon-white"></i>  

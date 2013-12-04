@@ -1,7 +1,7 @@
 <?php
-    class Comissariat
+    class Commissariat
     {
-        private $_id_comissariat;
+        private $_id_commissariat;
         private $_nom;
 		private $_position;
     
@@ -21,7 +21,7 @@
 			}
 		}
         
-        public function getId_comissariat(){ return $this->_id_comissariat; }
+        public function getId_comissariat(){ return $this->_id_commissariat; }
         public function getNom(){ return $this->_nom; }
         public function getPosition() { return $this->_position; }
         
@@ -30,7 +30,7 @@
      
 		
 		public function setId_comissariat($new) {		
-			$this->_id_comissariat =$new;
+			$this->_id_commissariat =$new;
 		}
 		public function setNom($new) {		
 			$this->_nom =$new;

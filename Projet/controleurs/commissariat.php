@@ -1,5 +1,6 @@
 <?php
-if($_GET['action']=='update'){
+//if($_GET['action']=='update'){
+if(isset($_GET['action'])){
 
 }
 else{

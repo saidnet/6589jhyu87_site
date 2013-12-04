@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 15:38:46
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 15:28:12
          compiled from "vues\templates\commissariat.htm" */ ?>
-<?php /*%%SmartyHeaderCode:9136529f4a2a734073-94596719%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:11450529eda3ce878b1-10350564%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
     array (
       0 => 'vues\\templates\\commissariat.htm',
-      1 => 1386171519,
+      1 => 1386170888,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
@@ -17,15 +17,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '9136529f4a2a734073-94596719',
+  'nocache_hash' => '11450529eda3ce878b1-10350564',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_529f4a2b0517f1_02848649',
+  'unifunc' => 'content_529eda3d014f42_63810883',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_529f4a2b0517f1_02848649')) {function content_529f4a2b0517f1_02848649($_smarty_tpl) {?>﻿<!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_529eda3d014f42_63810883')) {function content_529eda3d014f42_63810883($_smarty_tpl) {?>﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -218,16 +218,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						</tr>
 					</thead>   
 					<tbody>
-					<?php  $_smarty_tpl->tpl_vars['commissariat'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['commissariat']->_loop = false;
+					<?php  $_smarty_tpl->tpl_vars[$_smarty_tpl->tpl_vars['commissariat']->value] = new Smarty_Variable; $_smarty_tpl->tpl_vars[$_smarty_tpl->tpl_vars['commissariat']->value]->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['commissariat']->key => $_smarty_tpl->tpl_vars['commissariat']->value){
-$_smarty_tpl->tpl_vars['commissariat']->_loop = true;
+foreach ($_from as $_smarty_tpl->tpl_vars[$_smarty_tpl->tpl_vars['commissariat']->value]->key => $_smarty_tpl->tpl_vars[$_smarty_tpl->tpl_vars['commissariat']->value]->value){
+$_smarty_tpl->tpl_vars[$_smarty_tpl->tpl_vars['commissariat']->value]->_loop = true;
 ?>
 											
 						<tr>
-							<td><?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getNom();?>
+							<td><?php echo $_smarty_tpl->tpl_vars['commissariat']->value->nom;?>
 </td>
-							<td> <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getPosition();?>
+							<td> <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->position;?>
  </td>
 							<td class="center">
 								<a class="btn btn-success" href="#">
