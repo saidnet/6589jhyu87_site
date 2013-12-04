@@ -1,7 +1,7 @@
 <?php
     class Manager
     {
-        private $_db; // Instance de PDO
+        private $_db;
         private $nom_table;
         private $nbr_att;
         private $tab_att;

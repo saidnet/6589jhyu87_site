@@ -1,42 +1,39 @@
 <?php
     class Commissariat
     {
-        private $_id_commissariat;
-        private $_nom;
-		private $_position;
-    
-		public function hydrate(array $donnees)
-		{
-			foreach ($donnees as $key => $value)
-			{
-				// On récupère le nom du setter correspondant à l'attribut
-				$method = 'set'.ucfirst($key);
-				
-				// Si le setter correspondant existe
-				if (method_exists($this, $method))
-				{
-					// On appelle le setter
-					$this->$method($value);
-				}
-			}
-		}
-        
-        public function getId_comissariat(){ return $this->_id_commissariat; }
-        public function getNom(){ return $this->_nom; }
-        public function getPosition() { return $this->_position; }
+        private $_id;
+        private $_designation;
+		private $_x;
+		private $_y;
+
+    	public function __construct()
+	        {
+	        	$_designation="Central";
+	        	$_x="0.0";
+	        	$_y="0.0";
+	        }
+
+    	public function getNomTable(){ return 'commissariat'; }
+        public function getId(){ return $this->_id; }
+        public function getDesignation(){ return $this->_designation; }
+        public function getX() { return $this->_x; }
+        public function getY() { return $this->_y; }
         
 
 		
      
 		
-		public function setId_comissariat($new) {		
-			$this->_id_commissariat =$new;
+		public function setId($new) {		
+			$this->_id =$new;
 		}
-		public function setNom($new) {		
-			$this->_nom =$new;
+		public function setDesignation($new) {		
+			$this->_designation =$new;
 			}
-		public function setPosition($new) {		
-			$this->_position =$new;
+		public function setX($new) {		
+			$this->_x =$new;
+			}
+		public function setY($new) {		
+			$this->_y =$new;
 			}
 		
 		

@@ -1,9 +1,10 @@
 <?php
     class Alerte
     {
-        private $_id_alerte;
+        private $_id;
         private $_date_heure;
-		private $_position;
+		private $_x;
+		private $_y;
 		private $_description;
 		private $_id_lanceur;
 		private $_id_repondeur;
@@ -12,26 +13,26 @@
 		private $_id_attachement;
 		private $_id_type_alerte;
      
-        
-		public function hydrate(array $donnees)
-		{
-			foreach ($donnees as $key => $value)
-			{
-				// On récupère le nom du setter correspondant à l'attribut
-				$method = 'set'.ucfirst($key);
-				
-				// Si le setter correspondant existe
-				if (method_exists($this, $method))
-				{
-					// On appelle le setter
-					$this->$method($value);
-				}
-			}
-		}
-        
-        public function getId_alerte(){ return $this->_id_alerte; }
+        public function __construct()
+        {
+        	$_date_heure=date("d-m-Y");
+        	$_x="0.0";
+        	$_y="0.0";
+        	$_description="description de l'alerte";
+        	$_id_lanceur=1;
+        	$_id_repondeur=1;
+        	$_id_etat_alerte=1;
+        	$_id_nature_lanceur=1;
+        	$_id_attachement=1;
+        	$_id_type_alerte=1;
+        }
+
+
+		public function getNomTable(){ return 'alerte'; }
+        public function getId_alerte(){ return $this->_id; }
         public function getDate_heure(){ return $this->_date_heure; }
-        public function getPosition() { return $this->_position; }
+        public function getX() { return $this->_x; }
+        public function getY() { return $this->_y; }
         public function getDescription() { return $this->_description; }
 		public function getId_lanceur() { return $this->_id_lanceur; }
 		public function getId_repondeur() { return $this->_id_repondeur; }
@@ -41,14 +42,17 @@
 		
      
 		
-		public function setId_alerte($new) {		
-			$this->_id_alerte =$new;
+		public function setId($new) {		
+			$this->_id =$new;
 		}
 		public function setDate_heure($new) {		
 			$this->_date_heure =$new;
 			}
-		public function setPosition($new) {		
-			$this->_position =$new;
+		public function setX($new) {		
+			$this->_x =$new;
+			}
+		public function setY($new) {		
+			$this->_y =$new;
 			}
 		public function setDescription($new) {		
 			$this->_description =$new;

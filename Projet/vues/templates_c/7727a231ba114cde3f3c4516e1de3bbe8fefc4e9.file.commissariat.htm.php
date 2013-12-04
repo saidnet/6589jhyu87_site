@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 15:38:46
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 16:43:07
          compiled from "vues\templates\commissariat.htm" */ ?>
 <?php /*%%SmartyHeaderCode:9136529f4a2a734073-94596719%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
     array (
       0 => 'vues\\templates\\commissariat.htm',
-      1 => 1386171519,
+      1 => 1386175294,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
@@ -225,9 +225,10 @@ $_smarty_tpl->tpl_vars['commissariat']->_loop = true;
 ?>
 											
 						<tr>
-							<td><?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getNom();?>
+							<td><?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getDesignation();?>
 </td>
-							<td> <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getPosition();?>
+							<td> <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getX();?>
+ - <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getY();?>
  </td>
 							<td class="center">
 								<a class="btn btn-success" href="#">

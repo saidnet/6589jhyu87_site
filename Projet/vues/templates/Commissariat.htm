@@ -38,8 +38,8 @@
 					{foreach $list as $commissariat}
 											
 						<tr>
-							<td>{$commissariat->getNom()}</td>
-							<td> {$commissariat->getPosition()} </td>
+							<td>{$commissariat->getDesignation()}</td>
+							<td> {$commissariat->getX()} - {$commissariat->getY()} </td>
 							<td class="center">
 								<a class="btn btn-success" href="#">
 									<i class="icon-zoom-in icon-white"></i>  
