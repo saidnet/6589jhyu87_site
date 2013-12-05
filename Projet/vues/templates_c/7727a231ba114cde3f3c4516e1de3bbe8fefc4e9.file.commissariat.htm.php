@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 16:43:07
+=======
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 16:40:55
+>>>>>>> version 1.0.1.9
          compiled from "vues\templates\commissariat.htm" */ ?>
 <?php /*%%SmartyHeaderCode:9136529f4a2a734073-94596719%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +11,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
     array (
       0 => 'vues\\templates\\commissariat.htm',
+<<<<<<< HEAD
       1 => 1386175294,
+=======
+      1 => 1386174722,
+>>>>>>> version 1.0.1.9
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386166703,
+      1 => 1386174597,
       2 => 'file',
     ),
   ),
