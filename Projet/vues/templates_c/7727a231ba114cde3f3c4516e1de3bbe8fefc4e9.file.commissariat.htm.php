@@ -1,39 +1,31 @@
-<<<<<<< HEAD
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 16:43:07
-=======
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-04 16:40:55
->>>>>>> version 1.0.1.9
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-05 01:18:56
          compiled from "vues\templates\commissariat.htm" */ ?>
-<?php /*%%SmartyHeaderCode:9136529f4a2a734073-94596719%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:22291529fcd06653937-34285019%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
     array (
       0 => 'vues\\templates\\commissariat.htm',
-<<<<<<< HEAD
-      1 => 1386175294,
-=======
-      1 => 1386174722,
->>>>>>> version 1.0.1.9
+      1 => 1386206332,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386174597,
+      1 => 1386175511,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '9136529f4a2a734073-94596719',
+  'nocache_hash' => '22291529fcd06653937-34285019',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_529f4a2b0517f1_02848649',
+  'unifunc' => 'content_529fcd067a36b8_93899479',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_529f4a2b0517f1_02848649')) {function content_529f4a2b0517f1_02848649($_smarty_tpl) {?>﻿<!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_529fcd067a36b8_93899479')) {function content_529fcd067a36b8_93899479($_smarty_tpl) {?>﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -205,7 +197,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<hr>				
 	</div>
 	<div>
-		<a class="btn btn-success" href="#"><i class="icon-plus-sign icon-white"></i> Ajouter une nouvelle commissariat</a>
+		<a class="btn btn-success" id="nouveau" href="#"><i class="icon-plus-sign icon-white"></i> Ajouter une nouvelle commissariat</a>
 	</div>
 	<div class="row-fluid sortable">		
 		<div class="box span12">
@@ -218,10 +210,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 			</div>
 			<div class="box-content">
-				<table class="table table-striped table-bordered bootstrap-datatable datatable table-hover">
+				<table class="table table-striped table-bordered bootstrap-datatable datatable table-hover" id="commissariat">
 					<thead>
-							<th>Nom</th>
-							<th>Position</th>
+							<th>Designation</th>
+							<th>Position X</th>
+							<th>Position Y</th>
 							<th>Actions</th>
 						</tr>
 					</thead>   
@@ -232,20 +225,21 @@ foreach ($_from as $_smarty_tpl->tpl_vars['commissariat']->key => $_smarty_tpl->
 $_smarty_tpl->tpl_vars['commissariat']->_loop = true;
 ?>
 											
-						<tr>
-							<td><?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getDesignation();?>
+						<tr class="odd gradeX">
+							<td><?php echo utf8_encode($_smarty_tpl->tpl_vars['commissariat']->value->getDesignation());?>
 </td>
 							<td> <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getX();?>
- - <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getY();?>
+ </td>
+							<td> <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getY();?>
  </td>
 							<td class="center">
-								<a class="btn btn-success" href="#">
-									<i class="icon-zoom-in icon-white"></i>  
+								<a class="btn btn-success" href="">
+									<i class="icon-zoom-in icon-white afficher"></i>  
 								</a>
-								<a class="btn btn-info" href="#">
+								<a class="btn btn-info edit" href="">
 									<i class="icon-edit icon-white"></i>  
 								</a>
-								<a class="btn btn-danger" href="#">
+								<a class="btn btn-danger delete" href="">
 									<i class="icon-trash icon-white"></i> 
 								</a>
 							</td>

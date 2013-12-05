@@ -253,6 +253,80 @@ function template_functions(){
 	});
 
 	/* ---------- Table de données  ---------- */
+
+	var oTable = $('#commissariat').dataTable();
+
+	/* L'initialisation des tables de données
+	--------------------------------------------*/
+	function editRow ( oTable, nRow )
+	{
+	    var aData = oTable.fnGetData(nRow);
+	    var jqTds = $('>td', nRow);
+	    jqTds[0].innerHTML = '<input value="'+aData[0]+'" type="text">';
+	    jqTds[1].innerHTML = '<input value="'+aData[1]+'" type="text">';
+	    jqTds[2].innerHTML = '<input value="'+aData[2]+'" type="text">';
+	    jqTds[3].innerHTML = '<a class="edit" href="">Save</a><a class="btn btn-success" href=""><i class="icon-zoom-in icon-white afficher"></i></a><a class="btn btn-info edit" href=""><i class="icon-edit icon-white"></i></a><a class="btn btn-danger delete" href=""><i class="icon-trash icon-white"></i></a>';
+	}
+
+	function saveRow ( oTable, nRow )
+	{
+	    var jqInputs = $('input', nRow);
+	    oTable.fnUpdate( jqInputs[0].value, nRow, 0, false );
+	    oTable.fnUpdate( jqInputs[1].value, nRow, 1, false );
+	    oTable.fnUpdate( jqInputs[2].value, nRow, 2, false );
+	    oTable.fnUpdate( '<a class="edit" href="">Edit</a><a class="btn btn-success" href=""><i class="icon-zoom-in icon-white afficher"></i></a><a class="btn btn-info edit" href=""><i class="icon-edit icon-white"></i></a><a class="btn btn-danger delete" href=""><i class="icon-trash icon-white"></i></a>', nRow, 3, false );
+	    oTable.fnDraw();
+	}
+
+	var oTable = $('#commissariat').dataTable();
+	var nEditing = null;
+	     
+	    $('#commissariat a.edit').live('click', function (e) {
+	        e.preventDefault();
+	         
+	        /* Get the row as a parent of the link that was clicked on */
+	        var nRow = $(this).parents('tr')[0];
+	         
+	        if ( nEditing !== null && nEditing != nRow ) {
+	            /* A different row is being edited - the edit should be cancelled and this row edited */
+	            restoreRow( oTable, nEditing );
+	            editRow( oTable, nRow );
+	            nEditing = nRow;
+	        }
+	        else if ( nEditing == nRow && this.innerHTML == "Save" ) {
+	            /* This row is being edited and should be saved */
+	            saveRow( oTable, nEditing );
+	            nEditing = null;
+	        }
+	        else {
+	            /* No row currently being edited */
+	            editRow( oTable, nRow );
+	            nEditing = nRow;
+	        }
+	    } );
+
+	/* Ajout ligne 
+	-------------------*/
+	$('#nouveau').click( function (e) {
+	    e.preventDefault();
+	     
+	    var aiNew = oTable.fnAddData( [ '', '', '','<a class="edit" href="">Edit</a>', '<a class="delete" href="">Delete</a>' ] );
+	    var nRow = oTable.fnGetNodes( aiNew[0] );
+	    editRow( oTable, nRow );
+	    nEditing = nRow;
+	} );
+
+	/* suppression  de ligne
+	------------------------*/
+	$('#commissariat a.delete').live('click', function (e) {
+	    e.preventDefault();
+	     
+	    var nRow = $(this).parents('tr')[0];
+	    oTable.fnDeleteRow( nRow );
+	} );
+
+
+
 	$('.datatable').dataTable({
 			"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span12'i><'span12 center'p>>",
 			"sPaginationType": "bootstrap",
