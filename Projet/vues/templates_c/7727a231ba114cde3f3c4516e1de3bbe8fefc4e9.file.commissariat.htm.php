@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-05 01:18:56
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-05 01:33:08
          compiled from "vues\templates\commissariat.htm" */ ?>
 <?php /*%%SmartyHeaderCode:22291529fcd06653937-34285019%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
     array (
       0 => 'vues\\templates\\commissariat.htm',
-      1 => 1386206332,
+      1 => 1386207182,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
@@ -188,16 +188,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<hr>
 		<ul class="breadcrumb">
 			<li>
-				<a href="#">Accuiel</a> <span class="divider">/</span>
+				<a href="index.php">Accuiel</a> <span class="divider">/</span>
 			</li>
 			<li>
-				<a href="#">Les commissariat</a>
+				<a href="index.php?page=commissariat">Les commissariat</a>
 			</li>
 		</ul>
 		<hr>				
 	</div>
 	<div>
-		<a class="btn btn-success" id="nouveau" href="#"><i class="icon-plus-sign icon-white"></i> Ajouter une nouvelle commissariat</a>
+		<a class="btn btn-success" id="nouveau" href="index.php?page=add-commissariat"><i class="icon-plus-sign icon-white"></i> Ajouter une nouvelle commissariat</a>
 	</div>
 	<div class="row-fluid sortable">		
 		<div class="box span12">

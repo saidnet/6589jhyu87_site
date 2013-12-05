@@ -274,7 +274,7 @@ function template_functions(){
 	    oTable.fnUpdate( jqInputs[0].value, nRow, 0, false );
 	    oTable.fnUpdate( jqInputs[1].value, nRow, 1, false );
 	    oTable.fnUpdate( jqInputs[2].value, nRow, 2, false );
-	    oTable.fnUpdate( '<a class="edit" href="">Edit</a><a class="btn btn-success" href=""><i class="icon-zoom-in icon-white afficher"></i></a><a class="btn btn-info edit" href=""><i class="icon-edit icon-white"></i></a><a class="btn btn-danger delete" href=""><i class="icon-trash icon-white"></i></a>', nRow, 3, false );
+	    oTable.fnUpdate( '<a class="btn btn-success" href=""><i class="icon-zoom-in icon-white afficher"></i></a><a class="btn btn-info edit" href=""><i class="icon-edit icon-white"></i></a><a class="btn btn-danger delete" href=""><i class="icon-trash icon-white"></i></a>', nRow, 3, false );
 	    oTable.fnDraw();
 	}
 
