@@ -4,6 +4,9 @@
 if(isset($_GET['page']) and $_GET['page']=='connexion'){
 	require 'controleurs/connexion.php';
 }
+elseif(isset($_GET['page']) and $_GET['page']=='reinitialisation'){
+	require 'controleurs/reinitialisation.php';
+}
 else if (isset($_SESSION['login']))
 {
 	if (isset($_GET['page']))
@@ -18,7 +21,6 @@ else if (isset($_SESSION['login']))
 else
 {
 	require 'controleurs/connexion.php';
-	//require('controleurs/exemple.php');
 }
 
 ?>

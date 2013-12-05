@@ -1,4 +1,30 @@
-﻿{include 'head.htm'}
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-05 16:25:28
+         compiled from "vues\templates\connexion.htm" */ ?>
+<?php /*%%SmartyHeaderCode:1872852a09c65101bb8-09810919%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'db58c8b98d9cf7a81f14080402fac67b1c7633fc' => 
+    array (
+      0 => 'vues\\templates\\connexion.htm',
+      1 => 1386260496,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1872852a09c65101bb8-09810919',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_52a09c653589e2_17326699',
+  'variables' => 
+  array (
+    'msg' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_52a09c653589e2_17326699')) {function content_52a09c653589e2_17326699($_smarty_tpl) {?>﻿<?php echo $_smarty_tpl->getSubTemplate ('head.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 
 <body>
 	 	<div class="container-fluid">
@@ -12,7 +38,8 @@
 					</div>
 					<h2>Connectez-vous à votre compte</h2>
 
-					<h2><span class="label-important">{$msg}</span></h2>
+					<h2><span class="label-important"><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+</span></h2>
 					
 					<form class="form-horizontal" action="index.php?page=connexion" method="post">
 						<fieldset>
@@ -48,8 +75,9 @@
 				
 	</div><!--/.fluid-container-->
 		
-	{include 'javascript.htm'}
+	<?php echo $_smarty_tpl->getSubTemplate ('javascript.htm', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 	
 	
 </body>
-</html>
+</html><?php }} ?>

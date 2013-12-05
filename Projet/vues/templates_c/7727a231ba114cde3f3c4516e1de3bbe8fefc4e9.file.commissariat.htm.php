@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-05 01:33:08
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-05 18:08:41
          compiled from "vues\templates\commissariat.htm" */ ?>
 <?php /*%%SmartyHeaderCode:22291529fcd06653937-34285019%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
     array (
       0 => 'vues\\templates\\commissariat.htm',
-      1 => 1386207182,
+      1 => 1386266914,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386175511,
+      1 => 1386257368,
       2 => 'file',
     ),
   ),
@@ -76,14 +76,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </head>
 
 <body>
-		<div id="overlay">
+	<div id="overlay">
 		<ul>
-		  <li class="li1"></li>
-		  <li class="li2"></li>
-		  <li class="li3"></li>
-		  <li class="li4"></li>
-		  <li class="li5"></li>
-		  <li class="li6"></li>
+		  	<li class="li1"></li>
+		  	<li class="li2"></li>
+		  	<li class="li3"></li>
+		  	<li class="li4"></li>
+		  	<li class="li5"></li>
+		  	<li class="li6"></li>
 		</ul>
 	</div>	
 	<!-- start: Header -->
@@ -95,7 +95,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img alt="Tableau de bord Wide Team" src="web/img/logo20.png" /> <span class="hidden-phone">Paneau de configuration - E-SOS</span></a>
+				<a class="brand" href="index.php"> <img alt="Tableau de bord Wide Team" src="web/img/logo20.png" /> <span class="hidden-phone">Paneau de configuration - E-SOS</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -119,7 +119,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 	</a>
                                 </li>						
 								
-                                <li><a href="#" class="dropdown-menu-sub-footer">Voir tous les alerte</a></li>	
+                                <li><a href="index.php?page=liste-alerte" class="dropdown-menu-sub-footer">Voir tous les alerte</a></li>	
 							</ul>
 						</li>
 						
@@ -148,15 +148,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</div>
 	</div>
 	<!-- start: Header -->
-	
-		<div class="container-fluid">
+	<div class="container-fluid">
 		<div class="row-fluid">
 				
 			<!-- start: Main Menu -->
 			<div class="span2 main-menu-span">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li><a href="index.html"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Tableau de bord</span></a></li>
+						<li><a href="index.php"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Tableau de bord</span></a></li>
 						<li><a href="#"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Listes des utilisateurs</span></a></li>
 						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les commissariats</span></a></li>
 						<li><a href="index.php?page=hopital"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Les hopitaux</span></a></li>
@@ -167,9 +166,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 								<li><a class="submenu" href="index.php?page=type-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Types d'alrte</span></a></li>
 							</ul>	
 						</li>
-						<li><a href="#"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>	
-						<li><a href="#"><i class="icon-calendar icon-white"></i><span class="hidden-tablet"> Calendrier</span></a></li>
-						<li><a href="#"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Page de connexion</span></a></li>
+						<li><a href="index.php?page=statistique"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>	
+						<li><a href="index.php?page=calendrier"><i class="icon-calendar icon-white"></i><span class="hidden-tablet"> Calendrier</span></a></li>
+						<li><a href="index.php?page=connexion"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Page de connexion</span></a></li>
 					</ul>
 				</div><!--/.well -->
 			</div><!--/span-->
@@ -197,7 +196,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<hr>				
 	</div>
 	<div>
-		<a class="btn btn-success" id="nouveau" href="index.php?page=add-commissariat"><i class="icon-plus-sign icon-white"></i> Ajouter une nouvelle commissariat</a>
+		<a class="btn btn-success" id="nouveau" href="#"><i class="icon-plus-sign icon-white"></i> Ajouter une nouvelle commissariat</a>
 	</div>
 	<div class="row-fluid sortable">		
 		<div class="box span12">

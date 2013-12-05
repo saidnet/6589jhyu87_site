@@ -262,14 +262,23 @@ function template_functions(){
 	{
 	    var aData = oTable.fnGetData(nRow);
 	    var jqTds = $('>td', nRow);
-	    jqTds[0].innerHTML = '<input value="'+aData[0]+'" type="text">';
-	    jqTds[1].innerHTML = '<input value="'+aData[1]+'" type="text">';
-	    jqTds[2].innerHTML = '<input value="'+aData[2]+'" type="text">';
-	    jqTds[3].innerHTML = '<a class="edit" href="">Save</a><a class="btn btn-success" href=""><i class="icon-zoom-in icon-white afficher"></i></a><a class="btn btn-info edit" href=""><i class="icon-edit icon-white"></i></a><a class="btn btn-danger delete" href=""><i class="icon-trash icon-white"></i></a>';
+	    jqTds[0].innerHTML = '<input id="designation" value="'+aData[0]+'" type="text">';
+	    jqTds[1].innerHTML = '<input id="posix" value="'+aData[1]+'" type="text">';
+	    jqTds[2].innerHTML = '<input id="posiy" value="'+aData[2]+'" type="text">';
+	    jqTds[3].innerHTML = '<a class="edit btn btn-success" href="">Save</a>';
 	}
 
 	function saveRow ( oTable, nRow )
 	{
+		 $.ajax({
+		 type: 'GET',
+		 url: 'index.php?page=commissariat&action=add&designation=' + $('#designation').val() + '&posix=' + $('#posix').val() + '&posiy=' + $('#posiy').val() ,
+		 timeout: 3000,
+		 success: function(data) {
+		 alert(data); },
+		 error: function() {
+		 alert('La requête n\'a pas abouti'); }
+		 });
 	    var jqInputs = $('input', nRow);
 	    oTable.fnUpdate( jqInputs[0].value, nRow, 0, false );
 	    oTable.fnUpdate( jqInputs[1].value, nRow, 1, false );
