@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-05 18:08:41
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-06 21:18:21
          compiled from "vues\templates\commissariat.htm" */ ?>
 <?php /*%%SmartyHeaderCode:22291529fcd06653937-34285019%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
     array (
       0 => 'vues\\templates\\commissariat.htm',
-      1 => 1386266914,
+      1 => 1386364535,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386257368,
+      1 => 1386352317,
       2 => 'file',
     ),
   ),
@@ -196,7 +196,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<hr>				
 	</div>
 	<div>
-		<a class="btn btn-success" id="nouveau" href="#"><i class="icon-plus-sign icon-white"></i> Ajouter une nouvelle commissariat</a>
+		<a class="btn btn-success" id="" href="javascript:Ajouter();"><i class="icon-plus-sign icon-white"></i> Ajouter une nouvelle commissariat</a>
 	</div>
 	<div class="row-fluid sortable">		
 		<div class="box span12">
@@ -224,7 +224,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['commissariat']->key => $_smarty_tpl->
 $_smarty_tpl->tpl_vars['commissariat']->_loop = true;
 ?>
 											
-						<tr class="odd gradeX">
+						<tr id="<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
+" class="odd gradeX">
 							<td><?php echo utf8_encode($_smarty_tpl->tpl_vars['commissariat']->value->getDesignation());?>
 </td>
 							<td> <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getX();?>
@@ -232,13 +233,16 @@ $_smarty_tpl->tpl_vars['commissariat']->_loop = true;
 							<td> <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getY();?>
  </td>
 							<td class="center">
-								<a class="btn btn-success" href="">
+								<a class="btn btn-success" href="index.php?page=commissariat&action=afficher&id=<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
+">
 									<i class="icon-zoom-in icon-white afficher"></i>  
 								</a>
-								<a class="btn btn-info edit" href="">
+								<a class="btn btn-info edit" href="javascript:Update(<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
+);">
 									<i class="icon-edit icon-white"></i>  
 								</a>
-								<a class="btn btn-danger delete" href="">
+								<a class="btn btn-danger delete" href="javascript:Delete(<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
+);">
 									<i class="icon-trash icon-white"></i> 
 								</a>
 							</td>
@@ -252,6 +256,86 @@ $_smarty_tpl->tpl_vars['commissariat']->_loop = true;
 	<hr> <!-- Fin: Content -->
 </div><!--/#content.span10-->
 </div><!--/fluid-row-->
+<script type="text/javascript">
+
+function Ajouter(){
+	$('tbody').prepend('<tr class=""><td><input id="designation" value="" type="text"></td><td><input id="posix" value="" type="text"></td><td><input id="posiy" value="" type="text"></td><td class="center"><a class="btn btn-success" href="javascript:Save();"> Save<i class="icon-zoom-in icon-white "></i></a></td></tr>');
+}
+function Save(){
+	$.ajax({
+		type: 'GET',
+		url: 'index.php?page=commissariat&action=add&designation=' + $('#designation').val() + '&posix=' + $('#posix').val() + '&posiy=' + $('#posiy').val() ,
+		timeout: 3000,
+		success: function(data) {
+		 	// return id de l'enregistrement
+		 	$('tbody tr:eq(0)').attr('id',data);
+			$('tbody tr:eq(0) td:eq(0)').html($('#designation').val());
+			$('tbody tr:eq(0) td:eq(1)').html($('#posix').val());
+			$('tbody tr:eq(0) td:eq(2)').html($('#posiy').val());
+			$('tbody tr:eq(0) td:eq(3)').html('<a class="btn btn-success" href="index.php?page=commissariat&action=afficher&id='+data+'">'+
+									'<i class="icon-zoom-in icon-white"></i>'+  
+								'</a>'+
+								'<a class="btn btn-info edit" href="javascript:Update('+data+');">'+
+									'<i class="icon-edit icon-white"></i> '+ 
+								'</a>'+
+								'<a class="btn btn-danger " href="javascript:Delete('+data+');">'+
+									'<i class="icon-trash icon-white"></i>'+ 
+								'</a>');
+			alert(data); },
+		error: function() {
+			alert('La requête n\'a pas abouti'); }
+
+	});
+	
+}
+function Delete(id){
+	$.ajax({
+		type: 'GET',
+		url: 'index.php?page=commissariat&action=delete&id='+id,
+		timeout: 3000,
+		success: function(data) {
+		 	$('#'+id).remove();
+			alert(data); 
+		},
+		error: function() {
+			alert('La requête n\'a pas abouti'); }
+	});
+}
+function Update(id){
+	$('#'+id+' td:eq(0)').html('<input id="designation" value="'+$('#'+id+' td:eq(0)').html()+'" type="text">');
+	$('#'+id+' td:eq(1)').html('<input id="posix" value="'+$('#'+id+' td:eq(1)').html()+'" type="text">');
+	$('#'+id+' td:eq(2)').html('<input id="posiy" value="'+$('#'+id+' td:eq(2)').html()+'" type="text">');
+	$('#'+id+' td:eq(3)').html('<a class="btn btn-success" href="javascript:Modifier('+id+');"> Enregistrer<i class="icon-zoom-in icon-white "></i></a>');
+}
+function Modifier(id){
+	$.ajax({
+		type: 'GET',
+		url: 'index.php?page=commissariat&action=update&id='+id+'&designation=' + $('#designation').val() + '&posix=' + $('#posix').val() + '&posiy=' + $('#posiy').val() ,
+		timeout: 3000,
+		success: function(data) {
+		 	
+			$('#'+id+' td:eq(0)').html($('#designation').val());
+			$('#'+id+' td:eq(1)').html($('#posix').val());
+			$('#'+id+' td:eq(2)').html($('#posiy').val());
+			$('#'+id+' td:eq(3)').html('<a class="btn btn-success" href="index.php?page=commissariat&action=afficher&id='+id+'">'+
+									'<i class="icon-zoom-in icon-white afficher"></i>'+  
+								'</a>'+
+								'<a class="btn btn-info edit" href="javascript:Update('+id+');">'+
+									'<i class="icon-edit icon-white"></i> '+ 
+								'</a>'+
+								'<a class="btn btn-danger delete" href="javascript:Delete('+id+');">'+
+									'<i class="icon-trash icon-white"></i>'+ 
+								'</a>');
+			alert(data); },
+		error: function() {
+			alert('La requête n\'a pas abouti'); }
+
+	});
+	}
+
+
+
+</script>
 			
 				
 		<div class="modal hide fade" id="myModal">

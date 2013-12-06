@@ -47,7 +47,7 @@
         			$requete = $requete.$val." )";
         	else 	$requete = $requete."'".$val."' )";
 			
-			echo $requete;
+			//echo $requete;
 			$this->_db->exec($requete);
         }
 

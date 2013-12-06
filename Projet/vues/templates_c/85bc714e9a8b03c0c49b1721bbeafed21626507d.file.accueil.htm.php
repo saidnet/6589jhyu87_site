@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-05 16:51:46
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-06 17:54:06
          compiled from "vues\templates\accueil.htm" */ ?>
 <?php /*%%SmartyHeaderCode:2485952a0af22121b37-46981084%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386257368,
+      1 => 1386352317,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
   'unifunc' => 'content_52a0af2249c0f3_46399462',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_52a0af2249c0f3_46399462')) {function content_52a0af2249c0f3_46399462($_smarty_tpl) {?>﻿<!DOCTYPE html>
 <html lang="fr">

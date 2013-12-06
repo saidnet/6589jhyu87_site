@@ -280,6 +280,8 @@ function template_functions(){
 		 error: function() {
 		 alert('La requête n\'a pas abouti'); }
 		 });
+
+		 
 	    var jqInputs = $('input', nRow);
 	    oTable.fnUpdate( jqInputs[0].value, nRow, 0, false );
 	    oTable.fnUpdate( jqInputs[1].value, nRow, 1, false );
