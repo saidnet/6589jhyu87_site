@@ -252,12 +252,13 @@ function template_functions(){
 		}
 	});
 
-	/* ---------- Table de données  ---------- */
+
+	/* ---------- Table de données  ---------- 
 
 	var oTable = $('#commissariat').dataTable();
 
 	/* L'initialisation des tables de données
-	--------------------------------------------*/
+	--------------------------------------------
 	function editRow ( oTable, nRow )
 	{
 	    var aData = oTable.fnGetData(nRow);
@@ -293,29 +294,29 @@ function template_functions(){
 	    $('#commissariat a.edit').live('click', function (e) {
 	        e.preventDefault();
 	         
-	        /* Get the row as a parent of the link that was clicked on */
+	        /* Get the row as a parent of the link that was clicked on 
 	        var nRow = $(this).parents('tr')[0];
 	         
 	        if ( nEditing !== null && nEditing != nRow ) {
-	            /* A different row is being edited - the edit should be cancelled and this row edited */
+	            /* A different row is being edited - the edit should be cancelled and this row edited 
 	            restoreRow( oTable, nEditing );
 	            editRow( oTable, nRow );
 	            nEditing = nRow;
 	        }
 	        else if ( nEditing == nRow && this.innerHTML == "Save" ) {
-	            /* This row is being edited and should be saved */
+	            /* This row is being edited and should be saved 
 	            saveRow( oTable, nEditing );
 	            nEditing = null;
 	        }
 	        else {
-	            /* No row currently being edited */
+	            /* No row currently being edited 
 	            editRow( oTable, nRow );
 	            nEditing = nRow;
 	        }
 	    } );
 
 	/* Ajout ligne 
-	-------------------*/
+	-------------------
 	$('#nouveau').click( function (e) {
 	    e.preventDefault();
 	     
@@ -326,7 +327,7 @@ function template_functions(){
 	} );
 
 	/* suppression  de ligne
-	------------------------*/
+	------------------------
 	$('#commissariat a.delete').live('click', function (e) {
 	    e.preventDefault();
 	     
@@ -335,7 +336,7 @@ function template_functions(){
 	} );
 
 
-
+	*/
 	$('.datatable').dataTable({
 			"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span12'i><'span12 center'p>>",
 			"sPaginationType": "bootstrap",
