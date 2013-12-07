@@ -138,7 +138,7 @@ mysql_query($req) or die(mysql_error());
 $req ="
   CREATE TABLE IF NOT EXISTS `hopital` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(20) NOT NULL,
+  `designation` varchar(20) NOT NULL,
   `adresse` varchar(100) NOT NULL,
   `x` varchar(20) CHARACTER SET utf8 NOT NULL,
   `y` varchar(20) CHARACTER SET utf8 NOT NULL,
@@ -149,8 +149,8 @@ mysql_query($req) or die(mysql_error());
 
 
 $req ="
-  INSERT INTO `hopital` (`id`, `nom`, `adresse`, `x`, `y`) VALUES
-(1, 'Hôpital Ibn Tofail', 'Rue Ibn Qodama, Marrakesh, Maroc', '31.641873', '-8.015821'),
+  INSERT INTO `hopital` (`id`, `designation`, `adresse`, `x`, `y`) VALUES
+(1, 'Hopital Ibn Tofail', 'Rue Ibn Qodama, Marrakesh, Maroc', '31.641873', '-8.015821'),
 (2, 'civile', 'daoudiat', '1478,125', '1458,26'),
 (3, 'clinique', 'mhamid', '478,14', '245,58'),
 (4, 'civile', 'daoudiat', '4587,47', '7856,24');
