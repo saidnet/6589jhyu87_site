@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-07 19:19:31
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-07 20:03:02
          compiled from "vues\templates\accueil.htm" */ ?>
 <?php /*%%SmartyHeaderCode:2479752a374c3f15f77-66409963%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '85bc714e9a8b03c0c49b1721bbeafed21626507d' => 
     array (
       0 => 'vues\\templates\\accueil.htm',
-      1 => 1386257367,
+      1 => 1386446444,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386443574,
+      1 => 1386446444,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
   'unifunc' => 'content_52a374c4218b51_68588718',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_52a374c4218b51_68588718')) {function content_52a374c4218b51_68588718($_smarty_tpl) {?>﻿<!DOCTYPE html>
 <html lang="fr">
@@ -157,7 +157,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="index.php"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Tableau de bord</span></a></li>
 						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les alertes</span></a></li>
-						<li><a href="#"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Listes des utilisateurs</span></a></li>
 						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les commissariats</span></a></li>
 						<li><a href="index.php?page=hopital"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Les hopitaux</span></a></li>
 						<li>
