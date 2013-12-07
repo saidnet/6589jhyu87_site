@@ -16,13 +16,19 @@ if(isset($_GET['action'])){
 		$c->setX($_GET['posix']);
 		$c->setY($_GET['posiy']);
 		$bdd_manager->update($c);
-		echo 'update';
+		echo '<strong>update</strong>';
 	}
 	elseif ($_GET['action']=='delete') {
 		$c= new Commissariat();
 		$c->setId($_GET['id']);
 		$bdd_manager->delete($c);
 		echo 'delete';
+	}
+	elseif ($_GET['action']=='afficher') {
+		$c= new Commissariat();
+		$c=$bdd_manager->getByID('commissariat',$_GET['id']);
+		$tpl->assign('commissariat',$c);
+		$tpl->display('afficher_commissariat.htm');
 	}
 }
 else{

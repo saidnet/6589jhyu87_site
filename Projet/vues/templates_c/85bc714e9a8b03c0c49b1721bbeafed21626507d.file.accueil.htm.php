@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-06 17:54:06
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-07 19:19:31
          compiled from "vues\templates\accueil.htm" */ ?>
-<?php /*%%SmartyHeaderCode:2485952a0af22121b37-46981084%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2479752a374c3f15f77-66409963%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -13,19 +13,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386352317,
+      1 => 1386443574,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2485952a0af22121b37-46981084',
+  'nocache_hash' => '2479752a374c3f15f77-66409963',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_52a0af2249c0f3_46399462',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_52a374c4218b51_68588718',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_52a0af2249c0f3_46399462')) {function content_52a0af2249c0f3_46399462($_smarty_tpl) {?>﻿<!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_52a374c4218b51_68588718')) {function content_52a374c4218b51_68588718($_smarty_tpl) {?>﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -75,7 +75,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		
 </head>
 
-<body>
+<body onload="initialiser_map()">
 	<div id="overlay">
 		<ul>
 		  	<li class="li1"></li>
@@ -136,7 +136,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							</a>
 							<ul class="dropdown-menu">
 								<li><a href="index.php?page=profile"><i class="icon-user"></i> Profile</a></li>
-								<li><a href="index.php?page=connexion"><i class="icon-off"></i> Déconnexion</a></li>
+								<li><a href="index.php?page=deconnexion"><i class="icon-off"></i> Déconnexion</a></li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->
@@ -156,17 +156,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="index.php"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Tableau de bord</span></a></li>
+						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les alertes</span></a></li>
 						<li><a href="#"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Listes des utilisateurs</span></a></li>
 						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les commissariats</span></a></li>
 						<li><a href="index.php?page=hopital"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Les hopitaux</span></a></li>
 						<li>
-							<a class="dropmenu" href="#"><i class="icon-exclamation-sign icon-white"></i><span class="hidden-tablet"> Les alertes</span></a>
+							<a class="dropmenu" href="#"><i class="icon-exclamation-sign icon-white"></i><span class="hidden-tablet"> Paramétrage</span></a>
 							<ul>
-								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Etats alerte</span></a></li>
 								<li><a class="submenu" href="index.php?page=type-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Types d'alrte</span></a></li>
+								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Etats alerte</span></a></li>
+								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Etats utilisateur</span></a></li>
+								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Type utilisateur</span></a></li>
+								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Role</span></a></li>
 							</ul>	
 						</li>
-						<li><a href="index.php?page=statistique"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>	
+						<li><a href="index.php?page=statistique"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>
+						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les utilisateurs</span></a></li>
 						<li><a href="index.php?page=calendrier"><i class="icon-calendar icon-white"></i><span class="hidden-tablet"> Calendrier</span></a></li>
 						<li><a href="index.php?page=connexion"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Page de connexion</span></a></li>
 					</ul>

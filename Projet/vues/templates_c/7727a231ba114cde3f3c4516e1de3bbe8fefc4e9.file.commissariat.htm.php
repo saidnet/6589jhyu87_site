@@ -1,31 +1,31 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-06 21:18:21
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-07 19:19:17
          compiled from "vues\templates\commissariat.htm" */ ?>
-<?php /*%%SmartyHeaderCode:22291529fcd06653937-34285019%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1024852a374b58a7cb8-68117701%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
     array (
       0 => 'vues\\templates\\commissariat.htm',
-      1 => 1386364535,
+      1 => 1386441012,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386352317,
+      1 => 1386443574,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '22291529fcd06653937-34285019',
+  'nocache_hash' => '1024852a374b58a7cb8-68117701',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_529fcd067a36b8_93899479',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_52a374b5e73a46_29052649',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_529fcd067a36b8_93899479')) {function content_529fcd067a36b8_93899479($_smarty_tpl) {?>﻿<!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_52a374b5e73a46_29052649')) {function content_52a374b5e73a46_29052649($_smarty_tpl) {?>﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -75,7 +75,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		
 </head>
 
-<body>
+<body onload="initialiser_map()">
 	<div id="overlay">
 		<ul>
 		  	<li class="li1"></li>
@@ -136,7 +136,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							</a>
 							<ul class="dropdown-menu">
 								<li><a href="index.php?page=profile"><i class="icon-user"></i> Profile</a></li>
-								<li><a href="index.php?page=connexion"><i class="icon-off"></i> Déconnexion</a></li>
+								<li><a href="index.php?page=deconnexion"><i class="icon-off"></i> Déconnexion</a></li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->
@@ -156,17 +156,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="index.php"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Tableau de bord</span></a></li>
+						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les alertes</span></a></li>
 						<li><a href="#"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Listes des utilisateurs</span></a></li>
 						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les commissariats</span></a></li>
 						<li><a href="index.php?page=hopital"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Les hopitaux</span></a></li>
 						<li>
-							<a class="dropmenu" href="#"><i class="icon-exclamation-sign icon-white"></i><span class="hidden-tablet"> Les alertes</span></a>
+							<a class="dropmenu" href="#"><i class="icon-exclamation-sign icon-white"></i><span class="hidden-tablet"> Paramétrage</span></a>
 							<ul>
-								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Etats alerte</span></a></li>
 								<li><a class="submenu" href="index.php?page=type-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Types d'alrte</span></a></li>
+								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Etats alerte</span></a></li>
+								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Etats utilisateur</span></a></li>
+								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Type utilisateur</span></a></li>
+								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Role</span></a></li>
 							</ul>	
 						</li>
-						<li><a href="index.php?page=statistique"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>	
+						<li><a href="index.php?page=statistique"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>
+						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les utilisateurs</span></a></li>
 						<li><a href="index.php?page=calendrier"><i class="icon-calendar icon-white"></i><span class="hidden-tablet"> Calendrier</span></a></li>
 						<li><a href="index.php?page=connexion"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Page de connexion</span></a></li>
 					</ul>
@@ -228,10 +233,10 @@ $_smarty_tpl->tpl_vars['commissariat']->_loop = true;
 " class="odd gradeX">
 							<td><?php echo utf8_encode($_smarty_tpl->tpl_vars['commissariat']->value->getDesignation());?>
 </td>
-							<td> <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getX();?>
- </td>
-							<td> <?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getY();?>
- </td>
+							<td><?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getX();?>
+</td>
+							<td><?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getY();?>
+</td>
 							<td class="center">
 								<a class="btn btn-success" href="index.php?page=commissariat&action=afficher&id=<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
 ">

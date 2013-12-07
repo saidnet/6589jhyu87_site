@@ -3,12 +3,14 @@
     {
         private $_id;
         private $_designation;
+        private $_adress;
 		private $_x;
 		private $_y;
 
     	public function __construct()
 	        {
 	        	$_designation="Central";
+	        	$_adress="adr";
 	        	$_x="0.0";
 	        	$_y="0.0";
 	        }
@@ -16,6 +18,7 @@
     	public function getNomTable(){ return 'commissariat'; }
         public function getId(){ return $this->_id; }
         public function getDesignation(){ return $this->_designation; }
+        public function getAdress(){ return $this->_adress; }
         public function getX() { return $this->_x; }
         public function getY() { return $this->_y; }
         
@@ -29,7 +32,10 @@
 		public function setDesignation($new) {		
 			$this->_designation =$new;
 			}
-		public function setX($new) {		
+		public function setAdress($new) {
+			$this->_adress =$new;
+			}
+		public function setX($new) {
 			$this->_x =$new;
 			}
 		public function setY($new) {		

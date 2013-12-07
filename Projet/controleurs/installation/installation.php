@@ -20,18 +20,17 @@ $req ="
     `x` varchar(20) NOT NULL,
     `y` varchar(20) NOT NULL,
     `description` text NOT NULL,
+    `attachement` varchar(200) NULL,
     `id_lanceur` int(11) NOT NULL,
     `id_repondeur` int(11) DEFAULT NULL,
     `id_etat_alerte` int(11) NOT NULL,
     `id_nature_lanceur` int(11) NOT NULL,
-    `id_attachement` int(11) DEFAULT NULL,
     `id_type_alerte` int(11) NOT NULL,
     PRIMARY KEY (`id`),
-    KEY `id_lanceur` (`id_lanceur`,`id_repondeur`,`id_etat_alerte`,`id_nature_lanceur`,`id_attachement`,`id_type_alerte`),
-    KEY `id_repondeur` (`id_repondeur`,`id_etat_alerte`,`id_nature_lanceur`,`id_attachement`,`id_type_alerte`),
+    KEY `id_lanceur` (`id_lanceur`,`id_repondeur`,`id_etat_alerte`,`id_nature_lanceur`,`id_type_alerte`),
+    KEY `id_repondeur` (`id_repondeur`,`id_etat_alerte`,`id_nature_lanceur`,`id_type_alerte`),
     KEY `id_etat_alerte` (`id_etat_alerte`),
     KEY `id_nature_lanceur` (`id_nature_lanceur`),
-    KEY `id_attachement` (`id_attachement`),
     KEY `id_type_alerte` (`id_type_alerte`)
   ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
   ";
@@ -41,8 +40,8 @@ mysql_query($req) or die(mysql_error());
 
 
 $req ="
-  INSERT INTO `alerte` (`id`, `date_heure`, `x`, `y`, `description`, `id_lanceur`, `id_repondeur`, `id_etat_alerte`, `id_nature_lanceur`, `id_attachement`, `id_type_alerte`) VALUES
-  (1, '2013-12-11', '54984,58', '848974,68', 'Accident de deux voiture , il ya 3 blessées', 1, NULL, 1, 1, NULL, 1);
+  INSERT INTO `alerte` (`id`, `date_heure`, `x`, `y`, `description`,`attachement`, `id_lanceur`, `id_repondeur`, `id_etat_alerte`, `id_nature_lanceur`, `id_type_alerte`) VALUES
+  (1, '2013-12-11', '54984,58', '848974,68', 'Accident de deux voiture , il ya 3 blessées', 'lien.jpg',1, NULL, 1, 1, 1);
 ";
 mysql_query($req) or die(mysql_error());
 
@@ -74,24 +73,13 @@ $req ="
 mysql_query($req) or die(mysql_error());
 
 
-$req ="
-  CREATE TABLE IF NOT EXISTS `attachement` (`id` int(11) NOT NULL AUTO_INCREMENT,`lien` varchar(50) NOT NULL, PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;";
-mysql_query($req) or die(mysql_error());
-
-
-$req ="
-  INSERT INTO `attachement` (`id`, `lien`) VALUES (1, '/img/test.jpg');";
-mysql_query($req) or die(mysql_error());
-
-
 
 $req ="
   CREATE TABLE IF NOT EXISTS `commissariat` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `designation` varchar(30) NOT NULL,
+  `designation` varchar(100) NOT NULL,
   `adress` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `x` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `x` varchar(20) CHARACTER SET utf8 NOT NULL,
   `y` varchar(20) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
@@ -102,7 +90,7 @@ mysql_query($req) or die(mysql_error());
 
 $req ="
   INSERT INTO `commissariat` (`id`, `designation`, `adress`, `x`, `y`) VALUES
-  (1, 'Centrale', 'jamaa el fna', '1257,45', '4785,32'),
+  (1, 'Prefecture de la Surete Nationale', 'Boulevard Abi Obayda Al Jarah, Marrakech, Maroc', '31.647016', '-7.987812'),
   (2, 'comisariat 2', 'adr 2', '1235.3', '15.623'),
   (3, 'comisariat 3', 'adr 3', '1234.58', '45.236');
   ";
@@ -162,7 +150,7 @@ mysql_query($req) or die(mysql_error());
 
 $req ="
   INSERT INTO `hopital` (`id`, `nom`, `adresse`, `x`, `y`) VALUES
-(1, 'militaire', 'gueliz', '4587,14', '5896,14'),
+(1, 'Hôpital Ibn Tofail', 'Rue Ibn Qodama, Marrakesh, Maroc', '31.641873', '-8.015821'),
 (2, 'civile', 'daoudiat', '1478,125', '1458,26'),
 (3, 'clinique', 'mhamid', '478,14', '245,58'),
 (4, 'civile', 'daoudiat', '4587,47', '7856,24');
@@ -303,7 +291,6 @@ $req ="
   ADD CONSTRAINT `alerte_ibfk_2` FOREIGN KEY (`id_repondeur`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `alerte_ibfk_3` FOREIGN KEY (`id_etat_alerte`) REFERENCES `etat_alerte` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `alerte_ibfk_4` FOREIGN KEY (`id_nature_lanceur`) REFERENCES `nature_lanceur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `alerte_ibfk_5` FOREIGN KEY (`id_attachement`) REFERENCES `attachement` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `alerte_ibfk_6` FOREIGN KEY (`id_type_alerte`) REFERENCES `type_alerte` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 ";
 mysql_query($req) or die(mysql_error());
