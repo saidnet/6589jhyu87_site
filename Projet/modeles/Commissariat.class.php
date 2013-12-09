@@ -6,6 +6,8 @@
         private $_adress;
 		private $_x;
 		private $_y;
+		private $_image;
+
 
     	public function __construct()
 	        {
@@ -13,6 +15,7 @@
 	        	$_adress="adr";
 	        	$_x="0.0";
 	        	$_y="0.0";
+	        	$_image="img.jpg";
 	        }
 
     	public function getNomTable(){ return 'commissariat'; }
@@ -21,7 +24,7 @@
         public function getAdress(){ return $this->_adress; }
         public function getX() { return $this->_x; }
         public function getY() { return $this->_y; }
-        
+        public function getImage() { return $this->_image; }
 
 		
      
@@ -41,7 +44,9 @@
 		public function setY($new) {		
 			$this->_y =$new;
 			}
-		
+		public function setImage($new) { 
+			$this->_image=$new; 
+			}
 		
        
     }

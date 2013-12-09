@@ -7,10 +7,17 @@
 		private $_password;
 		private $_nom;
 		private $_prenom;
-		private $_num_telef;
-		private $_id_etat_user;
-		private $_id_type_user;
-		private $_id_role;
+		private $_email;
+		private $_tel;
+		private $_operateur;
+		private $_serial;
+		private $_avatar;
+		private $_disponibilite;
+		private $_lastx;
+		private $_lasty;
+		private $_role;
+		private $_type;
+		private $_etat;
      
      	 public function __construct()
         {
@@ -19,10 +26,17 @@
         	$_password="pass";
         	$_nom="first name";
         	$_prenom="family name";
-        	$_num_telef="0600125896";
-        	$_id_etat_user=1;
-        	$_id_type_user=1;
-        	$_id_role=1;
+       		$_email="";
+        	$_tel="0600125896";
+        	$_operateur="";
+			$_serial="";
+			$_avatar="";
+			$_disponibilite="";
+			$_lastx="";
+			$_lasty="";
+        	$_role=1;
+        	$_type=1;
+        	$_etat=1;
         }
 
         
@@ -33,9 +47,17 @@
         public function getPassword() { return $this->_password; }
 		public function getNom() { return $this->_nom; }
 		public function getPrenom() { return $this->_prenom; }
-		public function getId_etat_user() { return $this->_id_etat_user; }
-		public function getId_type_user() { return $this->_id_type_user; }
-		public function getId_role() { return $this->_id_role; }
+		public function getEmail() { return $this->_email; }
+		public function getTel() { return $this->_tel; }
+		public function getOperateur() { return $this->_operateur; }
+		public function getSerial() { return $this->_serial; }
+		public function getAvatar() { return $this->_avatar; }
+		public function getDisponibilite() { return $this->_disponibilite; }
+		public function getLastx() { return $this->_lastx; }
+		public function getLasty() { return $this->_lasty; }
+		public function getRole() { return $this->_role; }
+		public function getType() { return $this->_type; }
+		public function getEtat() { return $this->_etat; }
 		
      
 		
@@ -57,14 +79,38 @@
 		public function setPrenom($new) {		
 			$this->_prenom =$new;
 			}
-		public function setId_etat_user($new) {		
-			$this->_id_etat_user =$new;
+		public function setEmail($new) {
+			$this->_email;
 			}
-		public function setId_type_user($new) {		
-			$this->_id_type_user =$new;
+		public function setTel($new) { 
+			$this->_tel; 
 			}
-		public function setId_role($new) {		
-			$this->_id_role =$new;
+		public function setOperateur($new) { 
+			$this->_operateur; 
+			}
+		public function setSerial($new) {
+			 $this->_serial; 
+			}
+		public function setAvatar($new) {
+			 $this->_avatar;
+			}
+		public function setDisponibilite($new) {
+			 $this->_disponibilite; 
+			}
+		public function setLastx($new) { 
+			$this->_lastx; 
+			}
+		public function setLasty($new) { 
+			$this->_lasty; 
+			}	
+		public function setRole($new) {		
+			$this->_role =$new;
+			}
+		public function setType($new) {		
+			$this->_type =$new;
+			}
+		public function setEtat($new) {		
+			$this->_etat =$new;
 			}
        
     }

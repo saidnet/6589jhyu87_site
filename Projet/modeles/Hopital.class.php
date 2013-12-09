@@ -6,6 +6,7 @@
 		private $_adresse;
 		private $_x;
 		private $_y;
+		private $_image;
 
 		 public function __construct()
         {
@@ -13,6 +14,7 @@
         	$_adresse="Guéliz";
         	$_x="0.0";
         	$_y="0.0";
+        	$_image="img.jpg";
         }
     
 		public function getNomTable(){ return 'hopital'; }
@@ -21,7 +23,7 @@
         public function getAdresse() { return $this->_adresse; }
         public function getX() { return $this->_x; }
         public function getY() { return $this->_y; }
-
+        public function getImage() { return $this->_image; }
 		
      
 		
@@ -39,6 +41,9 @@
 			}
 		public function setY($new) {		
 			$this->_y =$new;
-			}  
+			}
+		public function setIimage($new) {		
+			$this->_image =$new;
+		}  
     }
 ?>
