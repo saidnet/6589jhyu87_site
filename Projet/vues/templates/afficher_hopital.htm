@@ -54,7 +54,7 @@ function initialiser_map() {
 		position: new google.maps.LatLng({$hopital->getX()},{$hopital->getY()}),
 		map: carte,
 		draggable: true,
-		icon: "./web/img/icons_map/poste.png"
+		icon: "./web/img/icons_map/hospital.png"
 	});
 	google.maps.event.addListener(marqueur, 'click', function() {
         alert("Le marqueur a été cliqué.");//message d'alerte

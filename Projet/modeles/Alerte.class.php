@@ -9,8 +9,13 @@
 		private $_etat;
 		private $_nature;
 		private $_attachement;
+<<<<<<< HEAD
+		private $_lanceur;
+		private $_intervenant;
+=======
 		private $_id_lanceur;
 		private $_id_intervenant;
+>>>>>>> bfb8f67339b123a91f35a1be3c9ecced29c30b45
 		private $_type;
 		
 		
@@ -25,8 +30,13 @@
         	$_etat="";
         	$_nature="";
         	$_attachement="lien.jpg";
+<<<<<<< HEAD
+        	$_lanceur=1;
+        	$_intervenant=1;
+=======
         	$_id_lanceur=1;
         	$_id_intervenant=1;
+>>>>>>> bfb8f67339b123a91f35a1be3c9ecced29c30b45
         	$_type=1;
         }
 
@@ -40,6 +50,11 @@
         public function getEtat() { return $this->_etat; }
         public function getNature() { return $this->_nature; }
         public function getAttachement() { return $this->_attachement; }
+<<<<<<< HEAD
+		public function getLanceur() { return $this->_lanceur; }
+		public function getIntervenant() { return $this->_intervenant; }
+		public function getType() { return $this->_type; }
+=======
 		public function getId_lanceur() { return $this->_id_lanceur; }
 		public function getId_intervenant() { return $this->_id_intervenant; }
 		public function getType() { return $this->_type; }
@@ -47,6 +62,7 @@
 		
 		
      
+>>>>>>> bfb8f67339b123a91f35a1be3c9ecced29c30b45
 		
 		public function setId($new) {		
 			$this->_id =$new;
@@ -72,8 +88,8 @@
 		public function setAttachement($new) {		
 			$this->_attachement =$new;
 			}
-		public function setId_lanceur($new) {		
-			$this->Id_lanceur =$new;
+		public function setLanceur($new) {		
+			$this->_lanceur =$new;
 			}
 		public function setIntervenant($new) {		
 			$this->_intervenant =$new;
@@ -81,6 +97,9 @@
 		public function setType($new) {		
 			$this->_type =$new;
 			}
+<<<<<<< HEAD
+=======
 		
+>>>>>>> bfb8f67339b123a91f35a1be3c9ecced29c30b45
     }
 ?>
