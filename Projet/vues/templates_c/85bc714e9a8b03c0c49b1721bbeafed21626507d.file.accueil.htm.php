@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-09 18:46:31
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-10 13:36:28
          compiled from "vues\templates\accueil.htm" */ ?>
 <?php /*%%SmartyHeaderCode:2479752a374c3f15f77-66409963%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '85bc714e9a8b03c0c49b1721bbeafed21626507d' => 
     array (
       0 => 'vues\\templates\\accueil.htm',
-      1 => 1386613384,
+      1 => 1386682579,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386613386,
+      1 => 1386665979,
       2 => 'file',
     ),
   ),
@@ -162,15 +162,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-exclamation-sign icon-white"></i><span class="hidden-tablet"> Paramétrage</span></a>
 							<ul>
-								<li><a class="submenu" href="index.php?page=type-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Types d'alrte</span></a></li>
-								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Etats alerte</span></a></li>
-								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Etats utilisateur</span></a></li>
-								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Type utilisateur</span></a></li>
-								<li><a class="submenu" href="index.php?page=etat-alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Role</span></a></li>
+								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Types d'alrte</span></a></li>
 							</ul>	
 						</li>
 						<li><a href="index.php?page=statistique"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>
-						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les utilisateurs</span></a></li>
+						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> List u utilisateurs</span></a></li>
 						<li><a href="index.php?page=calendrier"><i class="icon-calendar icon-white"></i><span class="hidden-tablet"> Calendrier</span></a></li>
 						<li><a href="index.php?page=connexion"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Page de connexion</span></a></li>
 					</ul>
@@ -186,278 +182,76 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</noscript>
 			
 			
-<div id="content" class="span10">
-			<!-- start: Content -->
-			
-
-			<div>
-				<hr>
-				<ul class="breadcrumb">
-					<li>
-						<a href="index.php?page=accueil">Accuiel</a> <span class="divider">/</span>
-					</li>
-					<li>
-						<a href="index.php?page=liste-utilisateur">Listes des utilisateurs</a>
-					</li>
-				</ul>
-				<hr>				
+<div id="content" class="span10"> <!-- start: Content -->
+	<div>
+		<hr>
+		<ul class="breadcrumb">
+			<li>
+				<a href="index.php">Accuiel</a> <span class="divider">|</span>
+			</li>
+		</ul>
+		<hr>				
+	</div>
+	
+	<div class="row-fluid sortable">		
+		<div class="box span12">
+			<div class="box-header" data-original-title>
+				<h2><i class="icon-user"></i><span class="break"></span>hopital</h2>
+				<div class="box-icon">
+					<a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+					<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+					<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+				</div>
 			</div>
-			<div>
-				<a class="btn btn-success" href="index.php?page=add-utilisateur">
-                                <i class="icon-plus-sign icon-white"></i> Ajouter Un utilisateur
-                            </a>
-                            <a class="btn" href="index.php?page=liste-utilisateur">
-                                <i class=" icon-zoom-in"></i> Afficher les utilisaturs
-                            </a>
-                            <a class="btn btn-info" href="index.php?page=liste-alerte">
-                                <i class="icon-zoom-in icon-white"></i> Aficher les alerte
-                            </a>
+			<div class="box-content">
+		        <div id="carte" style="width:100%; height:700px"></div>
 			</div>
-			
-			<div class="row-fluid sortable">		
-				<div class="box span12">
-					<div class="box-header" data-original-title>
-						<h2><i class="icon-user"></i><span class="break"></span>Membres</h2>
-						<div class="box-icon">
-							<a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
-							<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
-							<a href="#" class="btn-close"><i class="icon-remove"></i></a>
-						</div>
-					</div>
-					<div class="box-content">
-						<table class="table table-striped table-bordered bootstrap-datatable datatable table-hover">
-						  <thead>
-							  <tr>
-								  <th>Utilisateur</th>
-								  <th>Date d'inscription</th>
-								  <th>Rôle</th>
-								  <th>Status</th>
-								  <th>Actions</th>
-							  </tr>
-						  </thead>   
-						  <tbody>
-							<tr>
-								<td>DANI Fouad</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">Responsable de livrable</td>
-								<td class="center">
-									<span class="label label-success">Active</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>  
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>  
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>MOUNJI Said</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">Chef projet</td>
-								<td class="center">
-									<span class="label label-success">Active</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>  
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>  
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>ERRAJI Soukaina</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">Responsable de communication</td>
-								<td class="center">
-									<span class="label label-success">Active</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>  
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>  
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-								</td>
-							</tr>
-							<tr>
-								<td>ROUMANI Abdessamade</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">Responsable de code </td>
-								<td class="center">
-									<span class="label label-success">Active</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>                                            
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>                                            
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>ELGDAWNY Achraf</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">Responsable de code </td>
-								<td class="center">
-									<span class="label label-success">Active</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>                                            
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>                                            
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Ali mohamed</td>
-								<td class="center">2012/02/01</td>
-								<td class="center">Membre</td>
-								<td class="center">
-									<span class="label label-important">Banned</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>                                            
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>                                            
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Walid hachmi </td>
-								<td class="center">2012/02/01</td>
-								<td class="center">membre</td>
-								<td class="center">
-									<span class="label label-important">Banned</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>                                            
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>                                            
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Bourjila Safa</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Membre</td>
-								<td class="center">
-									<span class="label label-warning">Active</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>                                            
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>                                            
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>SALIM Hamza</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Administrateur</td>
-								<td class="center">
-									<span class="label label-warning">Bannier</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>                                            
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>                                            
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>BLOUK Daoud</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Member</td>
-								<td class="center">
-									<span class="label label-warning">Bannier</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>                                            
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>                                            
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>BERTIT Sabir</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Member</td>
-								<td class="center">
-									<span class="label label-warning">Bannier</span>
-								</td>
-								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>                                            
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>                                            
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-							</tr>
-							
-						  </tbody>
-					  </table>            
-					</div>
-				</div><!--/span-->
-			
-			</div><!--/row-->
+		</div><!--/span-->
+	</div><!--/row-->
+	<hr> <!-- Fin: Content -->
+</div><!--/#content.span10-->
+</div><!--/fluid-row-->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+function initialiser_map() {
+    //var latlng = new google.maps.LatLng(46.779231, 6.659431);
+    var latlng = new google.maps.LatLng(31.630218,-8.015999);
+    //objet contenant des propriétés avec des identificateurs prédéfinis dans Google Maps permettant
+    //de définir des options d'affichage de notre carte
+    var options = {
+        center: latlng,
+        zoom: 13,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    
+    //constructeur de la carte qui prend en paramêtre le conteneur HTML
+    //dans lequel la carte doit s'afficher et les options
+    var carte = new google.maps.Map(document.getElementById("carte"), options);
 
-	<hr>
-			<!-- Fin: Content -->
-			</div><!--/#content.span10-->
-				</div><!--/fluid-row-->
+    <?php  $_smarty_tpl->tpl_vars['agent'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['agent']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['agent']->key => $_smarty_tpl->tpl_vars['agent']->value){
+$_smarty_tpl->tpl_vars['agent']->_loop = true;
+?>
+    //création du marqueur
+	var marqueur<?php echo $_smarty_tpl->tpl_vars['agent']->value->getId();?>
+ = new google.maps.Marker({
+		position: new google.maps.LatLng(<?php echo $_smarty_tpl->tpl_vars['agent']->value->getLastx();?>
+,<?php echo $_smarty_tpl->tpl_vars['agent']->value->getLasty();?>
+),
+		map: carte,
+		draggable: true,
+		icon: "./web/img/icons_map/policier.png"
+	});
+	google.maps.event.addListener(marqueur<?php echo $_smarty_tpl->tpl_vars['agent']->value->getId();?>
+, 'click', function() {
+        alert("Nom : <?php echo $_smarty_tpl->tpl_vars['agent']->value->getNom();?>
+ <?php echo $_smarty_tpl->tpl_vars['agent']->value->getPrenom();?>
+");//message d'alerte
+    });
+	<?php } ?>
+}
+</script>
 			
 				
 		<div class="modal hide fade" id="myModal">

@@ -80,28 +80,28 @@
 			$this->_prenom =$new;
 			}
 		public function setEmail($new) {
-			$this->_email;
+			$this->_email =$new;
 			}
 		public function setTel($new) { 
-			$this->_tel; 
+			$this->_tel=$new;
 			}
 		public function setOperateur($new) { 
-			$this->_operateur; 
+			$this->_operateur =$new;
 			}
 		public function setSerial($new) {
-			 $this->_serial; 
+			 $this->_serial =$new;
 			}
 		public function setAvatar($new) {
-			 $this->_avatar;
+			 $this->_avatar =$new;
 			}
 		public function setDisponibilite($new) {
-			 $this->_disponibilite; 
+			 $this->_disponibilite =$new;
 			}
 		public function setLastx($new) { 
-			$this->_lastx; 
+			$this->_lastx =$new;
 			}
 		public function setLasty($new) { 
-			$this->_lasty; 
+			$this->_lasty =$new;
 			}	
 		public function setRole($new) {		
 			$this->_role =$new;

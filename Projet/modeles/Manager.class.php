@@ -102,7 +102,22 @@
             
             return $list_elem;
         }
-        
+
+        public function getListWhere($nm_obj,$condition)
+        {
+            $list_elem = array();
+            
+            $resultat = $this->_db->query('SELECT * FROM '.$nm_obj." ".$condition);
+            
+            while($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
+            {
+                 $elem= new $nm_obj();
+                $elem = $this->hydrate($nm_obj,$ligne);
+                $list_elem[] = $elem;
+            }
+            
+            return $list_elem;
+        }
         public function update($obj)
         {   
             $this->init($obj);

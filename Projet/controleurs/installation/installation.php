@@ -3,6 +3,7 @@
 Réalisé par : Soukaina ERRAJI
 Description : Ce fichier permet d'installer la base de donnees.
 */
+
 mysql_connect($bd_host,$bd_login,$bd_mdp);
 $req ="DROP DATABASE IF EXISTS ".$bd_name.";";
 mysql_query($req) or die(mysql_error());
