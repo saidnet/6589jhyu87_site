@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-10 13:54:05
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-11 09:01:00
          compiled from "vues\templates\commissariat.htm" */ ?>
 <?php /*%%SmartyHeaderCode:2128152a71cfd2b7b37-72466118%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386665979,
+      1 => 1386752454,
       2 => 'file',
     ),
   ),
@@ -21,11 +21,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
   'unifunc' => 'content_52a71cfd84cfa4_49238049',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_52a71cfd84cfa4_49238049')) {function content_52a71cfd84cfa4_49238049($_smarty_tpl) {?>﻿<!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_52a71cfd84cfa4_49238049')) {function content_52a71cfd84cfa4_49238049($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -41,8 +41,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- Fin: Mobile Specific -->
 	
 	<!-- Debut: CSS -->
-	<link id="bootstrap-style" href="web/css/bootstrap.css" rel="stylesheet">
-	<link href="web/css/bootstrap-responsive.css" rel="stylesheet">
+	<link id="bootstrap-style" href="web/css/bootstrap.min.css" rel="stylesheet">
+	<link href="web/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="web/css/style.css" rel="stylesheet">
 	<link id="base-style-responsive" href="web/css/style-responsive.css" rel="stylesheet">
 	
@@ -95,7 +95,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.php"> <img alt="Tableau de bord Wide Team" src="web/img/logo20.png" /> <span class="hidden-phone">Paneau de configuration - E-SOS</span></a>
+				<a class="brand" href="index.php"> <img alt="Tableau de bord " src="web/img/logo20.png" /> <span class="hidden-phone">Paneau de configuration - E-SOS</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -119,7 +119,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 	</a>
                                 </li>						
 								
-                                <li><a href="index.php?page=liste-alerte" class="dropdown-menu-sub-footer">Voir tous les alerte</a></li>	
+                                <li><a href="index.php?page=alertes" class="dropdown-menu-sub-footer">Voir tous les alerte</a></li>	
 							</ul>
 						</li>
 						
@@ -156,17 +156,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="index.php"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Tableau de bord</span></a></li>
-						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les alertes</span></a></li>
+						<li><a href="index.php?page=commissariat"><i class="icon-exclamation-sign icon-white"></i><span class="hidden-tablet"> Les alertes</span></a></li>
 						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les commissariats</span></a></li>
 						<li><a href="index.php?page=hopital"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Les hopitaux</span></a></li>
 						<li>
-							<a class="dropmenu" href="#"><i class="icon-exclamation-sign icon-white"></i><span class="hidden-tablet"> Paramétrage</span></a>
+							<a class="dropmenu" href="#"><i class="icon-wrench icon-white"></i><span class="hidden-tablet"> Paramétrage</span></a>
 							<ul>
 								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Types d'alrte</span></a></li>
 							</ul>	
 						</li>
-						<li><a href="index.php?page=statistique"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>
-						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> List u utilisateurs</span></a></li>
+						<li><a href="index.php?page=statistique"><i class=" icon-picture icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>
+						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Liste utilisateurs</span></a></li>
 						<li><a href="index.php?page=calendrier"><i class="icon-calendar icon-white"></i><span class="hidden-tablet"> Calendrier</span></a></li>
 						<li><a href="index.php?page=connexion"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Page de connexion</span></a></li>
 					</ul>

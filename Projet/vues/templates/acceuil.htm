@@ -1,0 +1,215 @@
+{extends file="skeleton.htm"} 
+{block name="contenu"}
+<div id="content" class="span10"> <!-- start: Content -->
+	<div>
+		<hr>
+		<ul class="breadcrumb">
+			<li>
+				<a href="index.php">Accuiel</a> <span class="divider">|</span>
+			</li>
+		</ul>
+		<hr>				
+	</div>
+
+	<!-- debut block  paramètres -->
+	<div class="row-fluid sortable">
+		<div class="box span12">
+			<div class="box-header" data-original-title>
+				<h2><i class="icon-user"></i><span class="break"></span>Choix :
+				</h2>
+				<div class="box-icon">
+					<a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+					<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+					<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+				</div>
+			</div>
+			<div class="box-content">
+		        <div class="sortable row-fluid ui-sortable">
+		        	<a class="quick-button ">
+		        	<form method="POST" class="form-inline" action="index.php?page=acceuil">
+
+						<label class="inline" style="width:20px;"></label>
+		        		<label class="checkbox inline span2" for="policiers">
+							   <input type="checkbox" name="policiers" id="policiers"> Les policiers
+						</label>
+						<label class="checkbox inline span2" for="pompiers">
+							   <input type="checkbox" name="pompiers" id="pompiers"/> Les pompiers
+						</label>
+		        		   <label class="checkbox inline span2" for="hopitals">
+							   <input type="checkbox" name="hopitals" id="hopitals"> Les hopitaux
+						</label>
+						<label class="checkbox inline span2" for="new_alertes">
+							   <input type="checkbox" name="new_alertes" id="new_alertes"> Nouvelles Alertes
+						</label>
+						<label class="checkbox inline span2" for="alertes_en_cours">
+							   <input type="checkbox" name="alertes_en_cours" id="alertes_en_cours"> Les alertes en cours
+						</label>
+						<br><br>		        		
+		        		<button type="submit" name="envoyer" id="envoyer" value="Envoyer" class="btn btn-primary " style="float left"> Enregistrer les nouveaux paramétres </button>
+		        		<br>
+		        	</form>
+		        	</a>
+		        </div>
+			</div>
+		</div>
+	</div>
+	<!-- debut block  paramètres -->
+
+	<!--   debut block map-->
+	<div class="row-fluid sortable ui-sortable">
+		<div class="box span12">
+			<div data-original-title="" class="box-header">
+				<h2><i class="icon-edit"></i><span class="break"></span>Map</h2>
+				<div class="box-icon">
+					<a class="btn-setting" href="#"><i class="icon-wrench"></i></a>
+					<a class="btn-minimize" href="#"><i class="icon-chevron-up"></i></a>
+					<a class="btn-close" href="#"><i class="icon-remove"></i></a>
+				</div>
+			</div>
+		<div class="box-content">
+			<div class="sortable row-fluid ui-sortable">
+				<a class="quick-button ">
+					<div id="carte" style="width:100%; height:700px"></div>
+				</a>
+			</div>
+			
+		</div>
+		</div><!--/span-->
+	</div>
+	<!--   Fin block map-->
+
+	<!--   debut block affichage agent-->
+	<div class="row-fluid sortable ui-sortable">
+		<div class="box span12">
+			<div data-original-title="" class="box-header">
+				<h2><i class="icon-edit"></i><span class="break"></span>Agent:</h2>
+				<div class="box-icon">
+					<a class="btn-setting" href="#"><i class="icon-wrench"></i></a>
+					<a class="btn-minimize" href="#"><i class="icon-chevron-up"></i></a>
+					<a class="btn-close" href="#"><i class="icon-remove"></i></a>
+				</div>
+			</div>
+		<div class="box-content">
+			<div class="sortable row-fluid ui-sortable">
+				<div class="quick-button span10">
+					<table class="table table-striped"><thead>
+						<tr><th class="red">Nom :</th><th>ROMANI</th></tr>
+						<tr><th class="red">Prénom :</th><th>Abdessemed</th></tr>
+						<tr><th class="red">Email :</th><th>Abdessemed@gmail.com</th></tr>
+						<tr><th class="red">Téléphone :</th><th>0667584254</th></tr>
+					</thead></table>				
+				</div>
+				<div class="quick-button span2 avatar_police">
+					<a href="#">
+						<img  alt="Policier" src="web/img/policier/avatar-1.png">
+					</a>
+					<p class="red">Chi 7aja </p>
+				</div>
+			</div>
+			
+		</div>
+		</div><!--/span-->
+	</div>
+	<!--   fin block affichage agent-->
+	
+	<!--   debut script  map-->
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript">
+	function initialiser_map() {
+	    //var latlng = new google.maps.LatLng(46.779231, 6.659431);
+	    var latlng = new google.maps.LatLng(31.630218,-8.015999);
+	    //objet contenant des propriétés avec des identificateurs prédéfinis dans Google Maps permettant
+	    //de définir des options d'affichage de notre carte
+	    var options = {
+	        center: latlng,
+	        zoom: 13,
+	        mapTypeId: google.maps.MapTypeId.ROADMAP
+	    };
+	    
+	    //constructeur de la carte qui prend en paramêtre le conteneur HTML
+	    //dans lequel la carte doit s'afficher et les options
+	    var carte = new google.maps.Map(document.getElementById("carte"), options);
+
+	    // Les policiers
+	    {foreach $policiers as $policier}
+		var marqueur_policier{$policier->getId()} = new google.maps.Marker({
+			position: new google.maps.LatLng({$policier->getLastx()},{$policier->getLasty()}),
+			map: carte,
+			draggable: true,
+			icon: "./web/img/icons_map/policier.png"
+		});
+		google.maps.event.addListener(marqueur_policier{$policier->getId()}, 'click', function() {
+	        alert("Policier");
+	    });
+		{/foreach}
+
+		// Les Pompiers :
+		{foreach $pompiers as $pompier}
+		var marqueur_pompier{$pompier->getId()} = new google.maps.Marker({
+			position: new google.maps.LatLng({$pompier->getLastx()},{$pompier->getLasty()}),
+			map: carte,
+			draggable: true,
+			icon: "./web/img/icons_map/pompier.png"
+		});
+		google.maps.event.addListener(marqueur_pompier{$pompier->getId()}, 'click', function() {
+	        alert("Pompier");
+	    });
+		{/foreach}
+
+		// Les Commissariats :
+		{foreach $commissariats as $commissariat}
+		var marqueur_commissariat{$commissariat->getId()} = new google.maps.Marker({
+			position: new google.maps.LatLng({$commissariat->getX()},{$commissariat->getY()}),
+			map: carte,
+			draggable: true,
+			icon: "./web/img/icons_map/commissariat.png"
+		});
+		google.maps.event.addListener(marqueur_commissariat{$commissariat->getId()}, 'click', function() {
+	        alert("Commissariat");
+	    });
+		{/foreach}
+
+		// Les Hopitals :
+		{foreach $hopitals as $hopital}
+		var marqueur_hopital{$hopital->getId()} = new google.maps.Marker({
+			position: new google.maps.LatLng({$hopital->getX()},{$hopital->getY()}),
+			map: carte,
+			draggable: true,
+			icon: "./web/img/icons_map/hopital.png"
+		});
+		google.maps.event.addListener(marqueur_hopital{$hopital->getId()}, 'click', function() {
+	        alert("Hopital");
+	    });
+		{/foreach}
+
+		// Les new Alertes :
+		{foreach $new_alertes as $alerte}
+		var marqueur_alerte{$alerte->getId()} = new google.maps.Marker({
+			position: new google.maps.LatLng({$alerte->getX()},{$alerte->getY()}),
+			map: carte,
+			draggable: true,
+			icon: "./web/img/icons_map/new_alerte.png"
+		});
+		google.maps.event.addListener(marqueur_alerte{$alerte->getId()}, 'click', function() {
+	        alert("Les new Alertes");
+	    });
+		{/foreach}
+
+		// Les Alertes en cours :
+		{foreach $alertes_en_cours as $alerte}
+		var marqueur_alerte{$alerte->getId()} = new google.maps.Marker({
+			position: new google.maps.LatLng({$alerte->getX()},{$alerte->getY()}),
+			map: carte,
+			draggable: true,
+			icon: "./web/img/icons_map/alerte_en_cours.png"
+		});
+		google.maps.event.addListener(marqueur_alerte{$alerte->getId()}, 'click', function() {
+	        alert("Les Alertes en cours");
+	    });
+		{/foreach}
+	}
+	</script>
+	<!--   Fin script  map-->
+</div>
+
+{/block}
