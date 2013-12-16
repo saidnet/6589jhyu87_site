@@ -86,3 +86,5 @@
         <div id="carte" style="width:100%; height:100%"></div>
     </body>
 </html>
+
+<!-- http://maps.googleapis.com/maps/api/geocode/json?latlng=31.627696,-8.009509&sensor=true -->

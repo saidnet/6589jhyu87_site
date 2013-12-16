@@ -24,6 +24,22 @@ if(isset($_GET['action'])){
 	elseif ($_GET['action']=='verif') {
 		$a= new Alerte();
 		$r=$bdd_manager->getListWhere('alerte',"WHERE etat='a' ");
+		$n=count($r);
+		$a=$r[0];
+		/*
+		$var="array('n' => '".$n."'";
+		$var+=",'id'=> '".$a->getId()."'";
+		$var+=",'description'=> '".$a->getDescription()."'";
+		$var+=",'etat'=> '".$a->getEtat()."'";
+		$var+=",'nature'=> '".$a->getNature()."'";
+		$var+=")";
+
+		echo json_encode($var);
+		*/
+		//echo "OK";
+		echo json_encode(array('n' => 'test', 'nbr' => $n ));
+
+		//echo json_encode(array('n' => 'test' ,'id'=> $a->getId(),'description'=> $a->getDescription(),'etat'=> $a->getEtat(),'nature'=> $a->getNature()));
 	}
 }
 else{

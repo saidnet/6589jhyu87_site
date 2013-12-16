@@ -1,4 +1,31 @@
-<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-16 19:55:28
+         compiled from "vues\templates\commissariat.htm" */ ?>
+<?php /*%%SmartyHeaderCode:2829052a8a80af08a68-36730662%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
+    array (
+      0 => 'vues\\templates\\commissariat.htm',
+      1 => 1386446444,
+      2 => 'file',
+    ),
+    'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
+    array (
+      0 => 'vues\\templates\\skeleton.htm',
+      1 => 1387223699,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '2829052a8a80af08a68-36730662',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_52a8a80b5f0e52_80177811',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_52a8a80b5f0e52_80177811')) {function content_52a8a80b5f0e52_80177811($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -165,7 +192,162 @@
 				</div>
 			</noscript>
 			
-			{block name="contenu"}{/block}			
+			
+<div id="content" class="span10"> <!-- start: Content -->
+	<div>
+		<hr>
+		<ul class="breadcrumb">
+			<li>
+				<a href="index.php">Accuiel</a> <span class="divider">/</span>
+			</li>
+			<li>
+				<a href="index.php?page=commissariat">Les commissariat</a>
+			</li>
+		</ul>
+		<hr>				
+	</div>
+	<div>
+		<a class="btn btn-success" id="" href="javascript:Ajouter();"><i class="icon-plus-sign icon-white"></i> Ajouter une nouvelle commissariat</a>
+	</div>
+	<div class="row-fluid sortable">		
+		<div class="box span12">
+			<div class="box-header" data-original-title>
+				<h2><i class="icon-user"></i><span class="break"></span>Commissariat</h2>
+				<div class="box-icon">
+					<a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+					<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+					<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+				</div>
+			</div>
+			<div class="box-content">
+				<table class="table table-striped table-bordered bootstrap-datatable datatable table-hover" id="commissariat">
+					<thead>
+							<th>Designation</th>
+							<th>Position X</th>
+							<th>Position Y</th>
+							<th>Actions</th>
+						</tr>
+					</thead>   
+					<tbody>
+					<?php  $_smarty_tpl->tpl_vars['commissariat'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['commissariat']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['commissariat']->key => $_smarty_tpl->tpl_vars['commissariat']->value){
+$_smarty_tpl->tpl_vars['commissariat']->_loop = true;
+?>
+											
+						<tr id="<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
+" class="odd gradeX">
+							<td><?php echo utf8_encode($_smarty_tpl->tpl_vars['commissariat']->value->getDesignation());?>
+</td>
+							<td><?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getX();?>
+</td>
+							<td><?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getY();?>
+</td>
+							<td class="center">
+								<a class="btn btn-success" href="index.php?page=commissariat&action=afficher&id=<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
+">
+									<i class="icon-zoom-in icon-white afficher"></i>  
+								</a>
+								<a class="btn btn-info edit" href="javascript:Update(<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
+);">
+									<i class="icon-edit icon-white"></i>  
+								</a>
+								<a class="btn btn-danger delete" href="javascript:Delete(<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
+);">
+									<i class="icon-trash icon-white"></i> 
+								</a>
+							</td>
+						</tr>
+						<?php } ?>
+					</tbody>
+				</table>            
+			</div>
+		</div><!--/span-->
+	</div><!--/row-->
+	<hr> <!-- Fin: Content -->
+</div><!--/#content.span10-->
+</div><!--/fluid-row-->
+<script type="text/javascript">
+
+function Ajouter(){
+	$('tbody').prepend('<tr class=""><td><input id="designation" value="" type="text"></td><td><input id="posix" value="" type="text"></td><td><input id="posiy" value="" type="text"></td><td class="center"><a class="btn btn-success" href="javascript:Save();"> Save<i class="icon-zoom-in icon-white "></i></a></td></tr>');
+}
+function Save(){
+	$.ajax({
+		type: 'GET',
+		url: 'index.php?page=commissariat&action=add&designation=' + $('#designation').val() + '&posix=' + $('#posix').val() + '&posiy=' + $('#posiy').val() ,
+		timeout: 3000,
+		success: function(data) {
+		 	// return id de l'enregistrement
+		 	$('tbody tr:eq(0)').attr('id',data);
+			$('tbody tr:eq(0) td:eq(0)').html($('#designation').val());
+			$('tbody tr:eq(0) td:eq(1)').html($('#posix').val());
+			$('tbody tr:eq(0) td:eq(2)').html($('#posiy').val());
+			$('tbody tr:eq(0) td:eq(3)').html('<a class="btn btn-success" href="index.php?page=commissariat&action=afficher&id='+data+'">'+
+									'<i class="icon-zoom-in icon-white"></i>'+  
+								'</a>'+
+								'<a class="btn btn-info edit" href="javascript:Update('+data+');">'+
+									'<i class="icon-edit icon-white"></i> '+ 
+								'</a>'+
+								'<a class="btn btn-danger " href="javascript:Delete('+data+');">'+
+									'<i class="icon-trash icon-white"></i>'+ 
+								'</a>');
+			alert(data); },
+		error: function() {
+			alert('La requête n\'a pas abouti'); }
+
+	});
+	
+}
+function Delete(id){
+	$.ajax({
+		type: 'GET',
+		url: 'index.php?page=commissariat&action=delete&id='+id,
+		timeout: 3000,
+		success: function(data) {
+		 	$('#'+id).remove();
+			alert(data); 
+		},
+		error: function() {
+			alert('La requête n\'a pas abouti'); }
+	});
+}
+function Update(id){
+	$('#'+id+' td:eq(0)').html('<input id="designation" value="'+$('#'+id+' td:eq(0)').html()+'" type="text">');
+	$('#'+id+' td:eq(1)').html('<input id="posix" value="'+$('#'+id+' td:eq(1)').html()+'" type="text">');
+	$('#'+id+' td:eq(2)').html('<input id="posiy" value="'+$('#'+id+' td:eq(2)').html()+'" type="text">');
+	$('#'+id+' td:eq(3)').html('<a class="btn btn-success" href="javascript:Modifier('+id+');"> Enregistrer<i class="icon-zoom-in icon-white "></i></a>');
+}
+function Modifier(id){
+	$.ajax({
+		type: 'GET',
+		url: 'index.php?page=commissariat&action=update&id='+id+'&designation=' + $('#designation').val() + '&posix=' + $('#posix').val() + '&posiy=' + $('#posiy').val() ,
+		timeout: 3000,
+		success: function(data) {
+		 	
+			$('#'+id+' td:eq(0)').html($('#designation').val());
+			$('#'+id+' td:eq(1)').html($('#posix').val());
+			$('#'+id+' td:eq(2)').html($('#posiy').val());
+			$('#'+id+' td:eq(3)').html('<a class="btn btn-success" href="index.php?page=commissariat&action=afficher&id='+id+'">'+
+									'<i class="icon-zoom-in icon-white afficher"></i>'+  
+								'</a>'+
+								'<a class="btn btn-info edit" href="javascript:Update('+id+');">'+
+									'<i class="icon-edit icon-white"></i> '+ 
+								'</a>'+
+								'<a class="btn btn-danger delete" href="javascript:Delete('+id+');">'+
+									'<i class="icon-trash icon-white"></i>'+ 
+								'</a>');
+			alert(data); },
+		error: function() {
+			alert('La requête n\'a pas abouti'); }
+
+	});
+	}
+
+
+
+</script>
+			
 				
 		<div class="modal hide fade" id="myModal">
 			<div class="modal-header">
@@ -244,13 +426,13 @@
 				//alert("verif");
 				$.ajax({
 					type: 'GET',
-					url: 'index.php?page=alertes&action=verif',
-					//data:'page=alertes&action=verif',
+					url: 'index.php',
+					data:'page=alertes&action=verif',
 					timeout: 3000,
-					dataType: 'json',
+					//datatype: 'json',
 					success: function(data) {
 					 	//setTimeout("notification("+data+")",1000);
-						alert(data['n']+' - '+data['nbr']);
+						alert(data);
 					},
 					error: function() {
 						alert('La requête n\'a pas abouti'); }
@@ -259,7 +441,6 @@
 				
 			}
 			function init() {
-				verif();
 				//alert("INIT");
 				//setInterval(verif, 5000);
 			}
@@ -268,3 +449,4 @@
 	
 </body>
 </html>
+<?php }} ?>

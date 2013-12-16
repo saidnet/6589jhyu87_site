@@ -1,31 +1,31 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-11 14:50:22
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-16 20:27:43
          compiled from "vues\templates\acceuil.htm" */ ?>
-<?php /*%%SmartyHeaderCode:3122252a876926b0e46-54149098%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2449652af61f825d7a1-59820097%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2c8e5961e19b214231e8cda999665448f05e8a53' => 
     array (
       0 => 'vues\\templates\\acceuil.htm',
-      1 => 1386773418,
+      1 => 1386783267,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1386771490,
+      1 => 1387225657,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3122252a876926b0e46-54149098',
+  'nocache_hash' => '2449652af61f825d7a1-59820097',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_52a87693c6dd50_95674370',
+  'unifunc' => 'content_52af61f9764614_54382428',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_52a87693c6dd50_95674370')) {function content_52a87693c6dd50_95674370($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_52af61f9764614_54382428')) {function content_52af61f9764614_54382428($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -41,16 +41,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- Fin: Mobile Specific -->
 	
 	<!-- Debut: CSS -->
-	<link id="bootstrap-style" href="web/css/bootstrap.css" rel="stylesheet">
-	<link href="web/css/bootstrap-responsive.css" rel="stylesheet">
+	<link id="bootstrap-style" href="web/css/bootstrap.min.css" rel="stylesheet">
+	<link href="web/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="web/css/style.css" rel="stylesheet">
 	<link id="base-style-responsive" href="web/css/style-responsive.css" rel="stylesheet">
 	
 	<!--[if lt IE 7 ]>
-	<link id="ie-style" href="css/style-ie.css" rel="stylesheet">
+	<link id="ie-style" href="web/css/style-ie.css" rel="stylesheet">
 	<![Finif]-->
 	<!--[if IE 8 ]>
-	<link id="ie-style" href="css/style-ie.css" rel="stylesheet">
+	<link id="ie-style" href="web/css/style-ie.css" rel="stylesheet">
 	<![Finif]-->
 	<!--[if IE 9 ]>
 	<![Finif]-->
@@ -156,19 +156,30 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="index.php"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Tableau de bord</span></a></li>
-						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les alertes</span></a></li>
+						<li>
+							<a class="dropmenu" href="#"><i class="icon-wrench icon-white"></i><span class="hidden-tablet"> Les Alertes</span></a>
+							<ul>
+								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> En Attente</span></a></li>
+								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> En Cours</span></a></li>
+								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Resolue</span></a></li>
+								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Non Resolue</span></a></li>
+								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Fausse Alerte</span></a></li>
+							</ul>	
+						</li>
 						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les commissariats</span></a></li>
 						<li><a href="index.php?page=hopital"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet"> Les hopitaux</span></a></li>
 						<li>
-							<a class="dropmenu" href="#"><i class="icon-exclamation-sign icon-white"></i><span class="hidden-tablet"> Paramétrage</span></a>
+							<a class="dropmenu" href="#"><i class="icon-wrench icon-white"></i><span class="hidden-tablet"> Paramétrage</span></a>
 							<ul>
 								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Types d'alrte</span></a></li>
 							</ul>	
 						</li>
-						<li><a href="index.php?page=statistique"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>
+						<li><a href="index.php?page=statistique"><i class=" icon-picture icon-white"></i><span class="hidden-tablet"> Statistique</span></a></li>
+						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Liste Policiers</span></a></li>
+						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Liste Pompiers</span></a></li>
 						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Liste utilisateurs</span></a></li>
-						<li><a href="index.php?page=calendrier"><i class="icon-calendar icon-white"></i><span class="hidden-tablet"> Calendrier</span></a></li>
-						<li><a href="index.php?page=connexion"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Page de connexion</span></a></li>
+						
+						
 					</ul>
 				</div><!--/.well -->
 			</div><!--/span-->
@@ -190,7 +201,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<a href="index.php">Accuiel</a> <span class="divider">|</span>
 			</li>
 		</ul>
-		<hr>				
+		<hr>
 	</div>
 	<!-- debut block  paramètres -->
 	<div class="row-fluid sortable">
@@ -275,20 +286,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<div class="box-content">
 			<div class="sortable row-fluid ui-sortable">
 				<div id="zone_affichage">
-				<div class="quick-button span10">
-					<table class="table table-striped"><thead>
-						<tr><th class="red">Nom :</th><th>ROMANI</th></tr>
-						<tr><th class="red">Prénom :</th><th>Abdessemed</th></tr>
-						<tr><th class="red">Email :</th><th>Abdessemed@gmail.com</th></tr>
-						<tr><th class="red">Téléphone :</th><th>0667584254</th></tr>
-					</thead></table>				
-				</div>
-				<div class="quick-button span2 avatar_police">
-					<a href="#">
-						<img  alt="Policier" src="web/img/policier/avatar-1.png">
-					</a>
-					<p class="red">Policier </p>
-				</div>
+				
 			</div>
 			</div>
 			
@@ -443,7 +441,7 @@ $_smarty_tpl->tpl_vars['hopital']->_loop = true;
 					'<table class="table table-striped"><thead>'+
 						'<tr><th class="red">Designation :</th><th><?php echo $_smarty_tpl->tpl_vars['hopital']->value->getDesignation();?>
 </th></tr>'+
-						'<tr><th class="red">Adresse :</th><th><?php echo $_smarty_tpl->tpl_vars['hopital']->value->getAdress();?>
+						'<tr><th class="red">Adresse :</th><th><?php echo $_smarty_tpl->tpl_vars['hopital']->value->getAdresse();?>
 </th></tr>'+
 					'</thead></table>'+			
 				'</div>'+
@@ -588,12 +586,12 @@ $_smarty_tpl->tpl_vars['alerte']->_loop = true;
 		<script src="web/js/jquery.sparkline.min.js"></script>
 		<script src="web/js/custom.js"></script>
 		<script type="text/javascript">
-			function notification(){
+			function notification(data){
 				var unique_id = $.gritter.add({
 					// (string | mandatory) the heading of the notification
 					title: 'Welcome on Perfectum Dashboard',
 					// (string | mandatory) the text inside the notification
-					text: 'I hope you like this template',
+					text: data.description,
 					// (string | optional) the image to display on the left
 					image: 'img/avatar.jpg',
 					// (bool | optional) if you want it to fade out on its own or just sit there
@@ -609,10 +607,13 @@ $_smarty_tpl->tpl_vars['alerte']->_loop = true;
 				$.ajax({
 					type: 'GET',
 					url: 'index.php?page=alertes&action=verif',
+					//data:'page=alertes&action=verif',
 					timeout: 3000,
+					dataType: 'json',
 					success: function(data) {
-					 	//setTimeout("notification()",5000);
-						alert(data); },
+					 	//setTimeout("notification("+data+")",1000);
+						alert(data['n']+' - '+data['nbr']);
+					},
 					error: function() {
 						alert('La requête n\'a pas abouti'); }
 
@@ -620,8 +621,9 @@ $_smarty_tpl->tpl_vars['alerte']->_loop = true;
 				
 			}
 			function init() {
+				verif();
 				//alert("INIT");
-				//setInterval(verif, 10000);
+				//setInterval(verif, 5000);
 			}
 		</script>
 		<!-- Fin: JavaScript-->

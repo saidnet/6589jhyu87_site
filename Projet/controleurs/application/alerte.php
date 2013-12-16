@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 if(isset($_GET['Latitude'])){
+=======
+if(isset($_GET('Latitude'))){
+>>>>>>> 597dea0f5f311dfb7f00245d91142ea2cd9baa89
 	$a= new Alerte();
 	$a->setX($_GET['Latitude']);
 	$a->setY($_GET['Longitude']);

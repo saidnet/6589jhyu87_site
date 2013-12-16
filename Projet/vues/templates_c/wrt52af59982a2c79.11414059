@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-16 20:27:46
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-16 19:50:47
          compiled from "vues\templates\acceuil.htm" */ ?>
-<?php /*%%SmartyHeaderCode:1920552af6242d4ea10-09727773%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2523652a8a86648a810-25754987%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -13,19 +13,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1387225657,
+      1 => 1387223443,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1920552af6242d4ea10-09727773',
+  'nocache_hash' => '2523652a8a86648a810-25754987',
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_52af6244248502_49640612',
+  'unifunc' => 'content_52a8a867413ed2_27937758',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_52af6244248502_49640612')) {function content_52af6244248502_49640612($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_52a8a867413ed2_27937758')) {function content_52a8a867413ed2_27937758($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -161,9 +161,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							<ul>
 								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> En Attente</span></a></li>
 								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> En Cours</span></a></li>
-								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Resolue</span></a></li>
-								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Non Resolue</span></a></li>
-								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> Fausse Alerte</span></a></li>
+								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> En Cours</span></a></li>
+								<li><a class="submenu" href="index.php?page=type_alerte"><i class="fa-icon-file-alt icon-white"></i><span class="hidden-tablet"> En Cours</span></a></li>
 							</ul>	
 						</li>
 						<li><a href="index.php?page=commissariat"><i class="icon-th-large icon-white"></i><span class="hidden-tablet"> Les commissariats</span></a></li>
@@ -606,13 +605,13 @@ $_smarty_tpl->tpl_vars['alerte']->_loop = true;
 				//alert("verif");
 				$.ajax({
 					type: 'GET',
-					url: 'index.php?page=alertes&action=verif',
-					//data:'page=alertes&action=verif',
+					url: 'index.php',
+					data:'page=alertes&action=verif',
 					timeout: 3000,
-					dataType: 'json',
+					//datatype: 'json',
 					success: function(data) {
 					 	//setTimeout("notification("+data+")",1000);
-						alert(data['n']+' - '+data['nbr']);
+						alert(data);
 					},
 					error: function() {
 						alert('La requête n\'a pas abouti'); }
@@ -621,7 +620,6 @@ $_smarty_tpl->tpl_vars['alerte']->_loop = true;
 				
 			}
 			function init() {
-				verif();
 				//alert("INIT");
 				//setInterval(verif, 5000);
 			}
