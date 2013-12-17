@@ -15,16 +15,16 @@
 		
         public function __construct()
         {
-        	$_date=date("d-m-Y");
-        	$_x="0.0";
-        	$_y="0.0";
-        	$_description="description de l'alerte";
-        	$_etat="a";
-        	$_nature="v";
-        	$_attachement="lien.jpg";
-        	$_lanceur=1;
-        	$_intervenant=1;
-        	$_type=1;
+        	$this->_date=date('Y-m-d H:i:s');
+        	$this->_x="0.0";
+        	$this->_y="0.0";
+        	$this->_description="description de l'alerte";
+        	$this->_etat="a";
+        	$this->_nature="v";
+        	$this->_attachement="lien.jpg";
+        	$this->_lanceur=1;
+        	$this->_intervenant=1;
+        	$this->_type=1;
         }
 
 
@@ -41,7 +41,63 @@
 		public function getLanceur() { return $this->_lanceur; }
 		public function getIntervenant() { return $this->_intervenant; }
 		public function getType() { return $this->_type; }
-		
+
+		public function getEtatLibelle() {
+			switch ($this->_etat) {
+			    case "a":
+			        return "En Attente";
+			        break;
+			    case "c":
+			        return "En Cours";
+			        break;
+			    case "r":
+			        return "Résolue";
+			        break;
+			    case "n":
+			        return "Non-Résolue";
+			        break;
+			    case "l":
+			        return "Annullé";
+			        break;
+			    case "f":
+			        return "Fousse Alerte";
+			        break;
+			    default:
+			       return "";
+			}
+		}
+        public function getNatureLibelle() {
+        	switch ($this->_nature) {
+			    case "v":
+			        return "Victime";
+			        break;
+			    case "t":
+			        return "Témoin";
+			        break;
+			    default:
+			       return "";
+			}
+        }
+		public function getTypeLibelle() {
+			switch ($this->_type) {
+			    case  1:
+			        return "Accident";
+			        break;
+			    case  2:
+			        return "Incendie";
+			        break;
+			    case  3:
+			        return "Vol";
+			        break;
+			    case  4:
+			        return "Viol";
+			        break;
+			    default:
+			       return "";
+			}
+		}
+
+
 		public function setId($new) {		
 			$this->_id =$new;
 		}

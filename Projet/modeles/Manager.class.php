@@ -1,4 +1,8 @@
 <?php
+/*
+Réalisé par : Said MOUNJI
+Description : 
+*/
     class Manager
     {
         private $_db;
@@ -38,14 +42,14 @@
         		$val=$obj->$method();
         		if($this->tab_type[$i]=='int(11)')
         			$requete = $requete.$val.", ";
-        		else 	$requete = $requete."'".$val."', ";
+        		else 	$requete = $requete.'"'.$val.'", ';
         	}
 
         	$method = 'get'.ucfirst($this->tab_att[$this->nbr_att - 1]);
         	$val=$obj->$method();
         	if($this->tab_type[$this->nbr_att - 1]=='int(11)')
         			$requete = $requete.$val." )";
-        	else 	$requete = $requete."'".$val."' )";
+        	else 	$requete = $requete.'"'.$val.'" )';
 			
 			//echo $requete;
 			$this->_db->exec($requete);

@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-16 20:27:46
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-17 15:19:17
          compiled from "vues\templates\acceuil.htm" */ ?>
-<?php /*%%SmartyHeaderCode:1920552af6242d4ea10-09727773%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:333252b06b75b399b5-14387208%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -13,19 +13,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1387225657,
+      1 => 1387293415,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1920552af6242d4ea10-09727773',
+  'nocache_hash' => '333252b06b75b399b5-14387208',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_52af6244248502_49640612',
+  'unifunc' => 'content_52b06b76f02eb2_43930186',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_52af6244248502_49640612')) {function content_52af6244248502_49640612($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_52b06b76f02eb2_43930186')) {function content_52b06b76f02eb2_43930186($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -102,23 +102,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<ul class="nav pull-right">
 						<li class="dropdown hidden-phone">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="icon-warning-sign icon-white"></i> <span class="label label-success hidden-phone">3</span>
+								<i class="icon-warning-sign icon-white"></i> <span id="nbr_noti" class="label label-success hidden-phone">0</span>
 							</a>
-							<ul class="dropdown-menu notifications">
-								<li>
-									<span class="dropdown-menu-title">Vous avez 3 notifications</span>
-								</li>	
-                            	<li><a href="#">+ <i class="icon-user"></i> <span class="message">Nouvelle alerte</span><span class="time">1 min</span> 
-                                    </a>
-                                </li>
-                                <li><a href="#">+ <i class="icon-user"></i> <span class="message">Nouvellle alerte</span><span class="time">5 min</span> 
-                                    </a>
-                                </li>
-                                <li>
-                                	<a href="#">+ <i class="icon-user"></i> <span class="message">Nouvel utilisateur</span><span class="time">45 min</span> 
-                                	</a>
-                                </li>						
-								
+							<ul id="zone_noti" class="dropdown-menu notifications">
+								<li><span class="dropdown-menu-title">Vous avez 3 notifications</span></li>
+
+                            	<li><a href="#">+ <i class="icon-user"></i> <span class="message">Nouvelle alerte</span><span class="time"></span></a></li>
+                               	
                                 <li><a href="index.php?page=alertes" class="dropdown-menu-sub-footer">Voir tous les alerte</a></li>	
 							</ul>
 						</li>
@@ -564,7 +554,7 @@ $_smarty_tpl->tpl_vars['alerte']->_loop = true;
 		<script src="web/js/jquery.ui.touch-punch.js"></script>	
 		<script src="web/js/bootstrap.min.js"></script>	
 		<script src="web/js/jquery.cookie.js"></script>	
-		<script src='web/js/fullcalFinar.min.js'></script>	
+		<!-- <script src='web/js/fullcalFinar.min.js'></script>	-->
 		<script src='web/js/jquery.dataTables.min.js'></script>
 		<script src="web/js/excanvas.js"></script>
 		<script src="web/js/jquery.flot.min.js"></script>
@@ -586,43 +576,40 @@ $_smarty_tpl->tpl_vars['alerte']->_loop = true;
 		<script src="web/js/jquery.sparkline.min.js"></script>
 		<script src="web/js/custom.js"></script>
 		<script type="text/javascript">
-			function notification(data){
-				var unique_id = $.gritter.add({
-					// (string | mandatory) the heading of the notification
-					title: 'Welcome on Perfectum Dashboard',
-					// (string | mandatory) the text inside the notification
-					text: data.description,
-					// (string | optional) the image to display on the left
-					image: 'img/avatar.jpg',
-					// (bool | optional) if you want it to fade out on its own or just sit there
-					sticky: false,
-					// (int | optional) the time you want it to be alive for before fading out
-					time: '',
-					// (string | optional) the class name you want to apply to that specific message
-					class_name: 'my-sticky-class'
-				});
-			}
-			function verif() {
-				//alert("verif");
+		/*
+			function verif(){
 				$.ajax({
 					type: 'GET',
 					url: 'index.php?page=alertes&action=verif',
 					//data:'page=alertes&action=verif',
-					timeout: 3000,
+					timeout: 5000,
 					dataType: 'json',
 					success: function(data) {
-					 	//setTimeout("notification("+data+")",1000);
-						alert(data['n']+' - '+data['nbr']);
+						alert("Tset");
+						//var res="";
+						var i=0;
+						$('#nbr_noti').html(data.length);
+						/*
+						res=res + '<li><span class="dropdown-menu-title">Vous avez ';
+						res=res + data.length + ' notifications </span></li>';
+						
+						for(i=0;i<3;i++ ){
+							res=res+'<li><a href="#">+ <i class="icon-user"></i> <span class="message">'+data[i]['description'];
+							res=res+' </span><span class="time"></span></a></li>';
+						}
+
+						res=res+'<li><a href="index.php?page=alertes" class="dropdown-menu-sub-footer">Voir tous les alerte</a></li>';
+						
+						$('#zone_noti').html('test');
 					},
 					error: function() {
 						alert('La requête n\'a pas abouti'); }
-
 				});
-				
 			}
+			*/
 			function init() {
-				verif();
-				//alert("INIT");
+				alert("Cc");
+				//verif();
 				//setInterval(verif, 5000);
 			}
 		</script>

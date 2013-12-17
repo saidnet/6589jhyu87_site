@@ -1,31 +1,31 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-12-16 19:55:28
-         compiled from "vues\templates\commissariat.htm" */ ?>
-<?php /*%%SmartyHeaderCode:2829052a8a80af08a68-36730662%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.14, created on 2013-12-17 15:20:01
+         compiled from "vues\templates\afficher_commissariat.htm" */ ?>
+<?php /*%%SmartyHeaderCode:1147352b06ba1cb87a7-81639128%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '7727a231ba114cde3f3c4516e1de3bbe8fefc4e9' => 
+    '4825d6024c99865e4dbf225d89dc139d76f87592' => 
     array (
-      0 => 'vues\\templates\\commissariat.htm',
-      1 => 1386446444,
+      0 => 'vues\\templates\\afficher_commissariat.htm',
+      1 => 1387293223,
       2 => 'file',
     ),
     'b5ab9a35d03044e79bcbc6a1bffaa336449e639c' => 
     array (
       0 => 'vues\\templates\\skeleton.htm',
-      1 => 1387223699,
+      1 => 1387293415,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2829052a8a80af08a68-36730662',
+  'nocache_hash' => '1147352b06ba1cb87a7-81639128',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_52a8a80b5f0e52_80177811',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_52b06ba215fff8_19611476',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_52a8a80b5f0e52_80177811')) {function content_52a8a80b5f0e52_80177811($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_52b06ba215fff8_19611476')) {function content_52b06ba215fff8_19611476($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="fr">
 <head>
 	
@@ -102,23 +102,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<ul class="nav pull-right">
 						<li class="dropdown hidden-phone">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="icon-warning-sign icon-white"></i> <span class="label label-success hidden-phone">3</span>
+								<i class="icon-warning-sign icon-white"></i> <span id="nbr_noti" class="label label-success hidden-phone">0</span>
 							</a>
-							<ul class="dropdown-menu notifications">
-								<li>
-									<span class="dropdown-menu-title">Vous avez 3 notifications</span>
-								</li>	
-                            	<li><a href="#">+ <i class="icon-user"></i> <span class="message">Nouvelle alerte</span><span class="time">1 min</span> 
-                                    </a>
-                                </li>
-                                <li><a href="#">+ <i class="icon-user"></i> <span class="message">Nouvellle alerte</span><span class="time">5 min</span> 
-                                    </a>
-                                </li>
-                                <li>
-                                	<a href="#">+ <i class="icon-user"></i> <span class="message">Nouvel utilisateur</span><span class="time">45 min</span> 
-                                	</a>
-                                </li>						
-								
+							<ul id="zone_noti" class="dropdown-menu notifications">
+								<li><span class="dropdown-menu-title">Vous avez 3 notifications</span></li>
+
+                            	<li><a href="#">+ <i class="icon-user"></i> <span class="message">Nouvelle alerte</span><span class="time"></span></a></li>
+                               	
                                 <li><a href="index.php?page=alertes" class="dropdown-menu-sub-footer">Voir tous les alerte</a></li>	
 							</ul>
 						</li>
@@ -198,17 +188,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<hr>
 		<ul class="breadcrumb">
 			<li>
-				<a href="index.php">Accuiel</a> <span class="divider">/</span>
+				<a href="index.php">Accuiel</a> <span class="divider">|</span>
 			</li>
 			<li>
-				<a href="index.php?page=commissariat">Les commissariat</a>
+				<a href="index.php?page=commissariat">Afficher commissariat</a>
 			</li>
 		</ul>
 		<hr>				
 	</div>
-	<div>
-		<a class="btn btn-success" id="" href="javascript:Ajouter();"><i class="icon-plus-sign icon-white"></i> Ajouter une nouvelle commissariat</a>
-	</div>
+	
 	<div class="row-fluid sortable">		
 		<div class="box span12">
 			<div class="box-header" data-original-title>
@@ -220,132 +208,45 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 			</div>
 			<div class="box-content">
-				<table class="table table-striped table-bordered bootstrap-datatable datatable table-hover" id="commissariat">
-					<thead>
-							<th>Designation</th>
-							<th>Position X</th>
-							<th>Position Y</th>
-							<th>Actions</th>
-						</tr>
-					</thead>   
-					<tbody>
-					<?php  $_smarty_tpl->tpl_vars['commissariat'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['commissariat']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['commissariat']->key => $_smarty_tpl->tpl_vars['commissariat']->value){
-$_smarty_tpl->tpl_vars['commissariat']->_loop = true;
-?>
-											
-						<tr id="<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
-" class="odd gradeX">
-							<td><?php echo utf8_encode($_smarty_tpl->tpl_vars['commissariat']->value->getDesignation());?>
-</td>
-							<td><?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getX();?>
-</td>
-							<td><?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getY();?>
-</td>
-							<td class="center">
-								<a class="btn btn-success" href="index.php?page=commissariat&action=afficher&id=<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
-">
-									<i class="icon-zoom-in icon-white afficher"></i>  
-								</a>
-								<a class="btn btn-info edit" href="javascript:Update(<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
-);">
-									<i class="icon-edit icon-white"></i>  
-								</a>
-								<a class="btn btn-danger delete" href="javascript:Delete(<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getId();?>
-);">
-									<i class="icon-trash icon-white"></i> 
-								</a>
-							</td>
-						</tr>
-						<?php } ?>
-					</tbody>
-				</table>            
+		        <div id="carte" style="width:100%; height:700px"></div>
 			</div>
 		</div><!--/span-->
 	</div><!--/row-->
 	<hr> <!-- Fin: Content -->
 </div><!--/#content.span10-->
 </div><!--/fluid-row-->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
+function initialiser_map() {
+    //var latlng = new google.maps.LatLng(46.779231, 6.659431);
+    var latlng = new google.maps.LatLng(<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getX();?>
+,<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getY();?>
+);
+    //objet contenant des propriétés avec des identificateurs prédéfinis dans Google Maps permettant
+    //de définir des options d'affichage de notre carte
+    var options = {
+        center: latlng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    
+    //constructeur de la carte qui prend en paramêtre le conteneur HTML
+    //dans lequel la carte doit s'afficher et les options
+    var carte = new google.maps.Map(document.getElementById("carte"), options);
 
-function Ajouter(){
-	$('tbody').prepend('<tr class=""><td><input id="designation" value="" type="text"></td><td><input id="posix" value="" type="text"></td><td><input id="posiy" value="" type="text"></td><td class="center"><a class="btn btn-success" href="javascript:Save();"> Save<i class="icon-zoom-in icon-white "></i></a></td></tr>');
-}
-function Save(){
-	$.ajax({
-		type: 'GET',
-		url: 'index.php?page=commissariat&action=add&designation=' + $('#designation').val() + '&posix=' + $('#posix').val() + '&posiy=' + $('#posiy').val() ,
-		timeout: 3000,
-		success: function(data) {
-		 	// return id de l'enregistrement
-		 	$('tbody tr:eq(0)').attr('id',data);
-			$('tbody tr:eq(0) td:eq(0)').html($('#designation').val());
-			$('tbody tr:eq(0) td:eq(1)').html($('#posix').val());
-			$('tbody tr:eq(0) td:eq(2)').html($('#posiy').val());
-			$('tbody tr:eq(0) td:eq(3)').html('<a class="btn btn-success" href="index.php?page=commissariat&action=afficher&id='+data+'">'+
-									'<i class="icon-zoom-in icon-white"></i>'+  
-								'</a>'+
-								'<a class="btn btn-info edit" href="javascript:Update('+data+');">'+
-									'<i class="icon-edit icon-white"></i> '+ 
-								'</a>'+
-								'<a class="btn btn-danger " href="javascript:Delete('+data+');">'+
-									'<i class="icon-trash icon-white"></i>'+ 
-								'</a>');
-			alert(data); },
-		error: function() {
-			alert('La requête n\'a pas abouti'); }
-
+    //création du marqueur
+	var marqueur = new google.maps.Marker({
+		position: new google.maps.LatLng(<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getX();?>
+,<?php echo $_smarty_tpl->tpl_vars['commissariat']->value->getY();?>
+),
+		map: carte,
+		draggable: true,
+		icon: "./web/img/icons_map/commissariat.png"
 	});
-	
+	google.maps.event.addListener(marqueur, 'click', function() {
+        alert("Le marqueur a été cliqué.");//message d'alerte
+    });
 }
-function Delete(id){
-	$.ajax({
-		type: 'GET',
-		url: 'index.php?page=commissariat&action=delete&id='+id,
-		timeout: 3000,
-		success: function(data) {
-		 	$('#'+id).remove();
-			alert(data); 
-		},
-		error: function() {
-			alert('La requête n\'a pas abouti'); }
-	});
-}
-function Update(id){
-	$('#'+id+' td:eq(0)').html('<input id="designation" value="'+$('#'+id+' td:eq(0)').html()+'" type="text">');
-	$('#'+id+' td:eq(1)').html('<input id="posix" value="'+$('#'+id+' td:eq(1)').html()+'" type="text">');
-	$('#'+id+' td:eq(2)').html('<input id="posiy" value="'+$('#'+id+' td:eq(2)').html()+'" type="text">');
-	$('#'+id+' td:eq(3)').html('<a class="btn btn-success" href="javascript:Modifier('+id+');"> Enregistrer<i class="icon-zoom-in icon-white "></i></a>');
-}
-function Modifier(id){
-	$.ajax({
-		type: 'GET',
-		url: 'index.php?page=commissariat&action=update&id='+id+'&designation=' + $('#designation').val() + '&posix=' + $('#posix').val() + '&posiy=' + $('#posiy').val() ,
-		timeout: 3000,
-		success: function(data) {
-		 	
-			$('#'+id+' td:eq(0)').html($('#designation').val());
-			$('#'+id+' td:eq(1)').html($('#posix').val());
-			$('#'+id+' td:eq(2)').html($('#posiy').val());
-			$('#'+id+' td:eq(3)').html('<a class="btn btn-success" href="index.php?page=commissariat&action=afficher&id='+id+'">'+
-									'<i class="icon-zoom-in icon-white afficher"></i>'+  
-								'</a>'+
-								'<a class="btn btn-info edit" href="javascript:Update('+id+');">'+
-									'<i class="icon-edit icon-white"></i> '+ 
-								'</a>'+
-								'<a class="btn btn-danger delete" href="javascript:Delete('+id+');">'+
-									'<i class="icon-trash icon-white"></i>'+ 
-								'</a>');
-			alert(data); },
-		error: function() {
-			alert('La requête n\'a pas abouti'); }
-
-	});
-	}
-
-
-
 </script>
 			
 				
@@ -384,7 +285,7 @@ function Modifier(id){
 		<script src="web/js/jquery.ui.touch-punch.js"></script>	
 		<script src="web/js/bootstrap.min.js"></script>	
 		<script src="web/js/jquery.cookie.js"></script>	
-		<script src='web/js/fullcalFinar.min.js'></script>	
+		<!-- <script src='web/js/fullcalFinar.min.js'></script>	-->
 		<script src='web/js/jquery.dataTables.min.js'></script>
 		<script src="web/js/excanvas.js"></script>
 		<script src="web/js/jquery.flot.min.js"></script>
@@ -406,42 +307,40 @@ function Modifier(id){
 		<script src="web/js/jquery.sparkline.min.js"></script>
 		<script src="web/js/custom.js"></script>
 		<script type="text/javascript">
-			function notification(data){
-				var unique_id = $.gritter.add({
-					// (string | mandatory) the heading of the notification
-					title: 'Welcome on Perfectum Dashboard',
-					// (string | mandatory) the text inside the notification
-					text: data.description,
-					// (string | optional) the image to display on the left
-					image: 'img/avatar.jpg',
-					// (bool | optional) if you want it to fade out on its own or just sit there
-					sticky: false,
-					// (int | optional) the time you want it to be alive for before fading out
-					time: '',
-					// (string | optional) the class name you want to apply to that specific message
-					class_name: 'my-sticky-class'
-				});
-			}
-			function verif() {
-				//alert("verif");
+		/*
+			function verif(){
 				$.ajax({
 					type: 'GET',
-					url: 'index.php',
-					data:'page=alertes&action=verif',
-					timeout: 3000,
-					//datatype: 'json',
+					url: 'index.php?page=alertes&action=verif',
+					//data:'page=alertes&action=verif',
+					timeout: 5000,
+					dataType: 'json',
 					success: function(data) {
-					 	//setTimeout("notification("+data+")",1000);
-						alert(data);
+						alert("Tset");
+						//var res="";
+						var i=0;
+						$('#nbr_noti').html(data.length);
+						/*
+						res=res + '<li><span class="dropdown-menu-title">Vous avez ';
+						res=res + data.length + ' notifications </span></li>';
+						
+						for(i=0;i<3;i++ ){
+							res=res+'<li><a href="#">+ <i class="icon-user"></i> <span class="message">'+data[i]['description'];
+							res=res+' </span><span class="time"></span></a></li>';
+						}
+
+						res=res+'<li><a href="index.php?page=alertes" class="dropdown-menu-sub-footer">Voir tous les alerte</a></li>';
+						
+						$('#zone_noti').html('test');
 					},
 					error: function() {
 						alert('La requête n\'a pas abouti'); }
-
 				});
-				
 			}
+			*/
 			function init() {
-				//alert("INIT");
+				alert("Cc");
+				//verif();
 				//setInterval(verif, 5000);
 			}
 		</script>

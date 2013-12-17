@@ -4,6 +4,8 @@ if(isset($_GET['action'])){
 		$a= new Alerte();
 		
 		$bdd_manager->ajouter($a);
+		echo "Alerte ajouter :)\n";
+		echo date('Y-m-d');
 	}
 	elseif ($_GET['action']=='update') {
 		$a= new Alerte();
@@ -24,9 +26,10 @@ if(isset($_GET['action'])){
 	elseif ($_GET['action']=='verif') {
 		$a= new Alerte();
 		$r=$bdd_manager->getListWhere('alerte',"WHERE etat='a' ");
+		/*
 		$n=count($r);
 		$a=$r[0];
-		/*
+		
 		$var="array('n' => '".$n."'";
 		$var+=",'id'=> '".$a->getId()."'";
 		$var+=",'description'=> '".$a->getDescription()."'";
@@ -35,11 +38,21 @@ if(isset($_GET['action'])){
 		$var+=")";
 
 		echo json_encode($var);
-		*/
-		//echo "OK";
-		echo json_encode(array('n' => 'test', 'nbr' => $n ));
+		
+		echo "OK";
+		$arr=array('said','Fouad');
+		echo json_encode(array('n' => 'test', 'tab' => $arr ));
 
-		//echo json_encode(array('n' => 'test' ,'id'=> $a->getId(),'description'=> $a->getDescription(),'etat'=> $a->getEtat(),'nature'=> $a->getNature()));
+		echo json_encode(array('n' => 'test' ,'id'=> $a->getId(),'description'=> $a->getDescription(),'etat'=> $a->getEtat(),'nature'=> $a->getNature()));
+		*/
+		foreach($r as $a){
+			$lig['id']=$a->getId();
+			$lig['description']=$a->getDescription();
+			$lig['type_libelle']=$a->getTypeLibelle();
+			$res[]=$lig;
+		}
+		
+		echo json_encode($res);
 	}
 }
 else{

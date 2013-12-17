@@ -34,9 +34,9 @@
 			$_disponibilite="";
 			$_lastx="";
 			$_lasty="";
-        	$_role=1;
-        	$_type=1;
-        	$_etat=1;
+        	$_role="p";
+        	$_type="u";
+        	$_etat="a";
         }
 
         
@@ -58,6 +58,52 @@
 		public function getRole() { return $this->_role; }
 		public function getType() { return $this->_type; }
 		public function getEtat() { return $this->_etat; }
+
+		public function getRoleLibelle() {
+			switch ($this->_role) {
+			    case "p":
+			        return "Public";
+			        break;
+			    case "a":
+			        return "Admin";
+			        break;
+			    case "s":
+			        return "Super-Admin";
+			        break;
+			    default:
+			       return "";
+			}
+		}
+		public function getTypeLibelle() {
+			switch ($this->_type) {
+			    case "u":
+			        return "Utilisateur";
+			        break;
+			    case "l":
+			        return "Plocier";
+			        break;
+			    case "m":
+			        return "Pompier";
+			        break;
+			    default:
+			       return "";
+			}
+		}
+		public function getEtatLibelle() {
+			switch ($this->_etat) {
+			    case "a":
+			        return "Actif";
+			        break;
+			    case "b":
+			        return "Blocké";
+			        break;
+			    case "c":
+			        return "Confirmé";
+			        break;
+			    default:
+			       return "";
+			}
+		}
 		
      
 		
